@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+import "./Header.css";
 
 const Header = () => {
   return (
@@ -8,11 +9,18 @@ const Header = () => {
         <img src="/images/chef.png" alt="chef-hat" />
         <Link to="/">Recipeezy</Link>
       </div>
-      <div className="nav-item">
-        <Link to="/about">About</Link>
-        <Link to="/plannedmeals">Planned Meals</Link>
-        <Link to="/grocerylist">Grocery List</Link>
+      <div className="nav-items">
+        <span className="nav-item">
+          <Link to="/about">About</Link>
+        </span>
+        <span className="nav-item">
+          <Link to="/plannedmeals">Planned Meals</Link>
+        </span>
+        <span className="nav-item">
+          <Link to="/grocerylist">Grocery List</Link>
+        </span>
       </div>
+      <Outlet />
     </div>
   );
 };
