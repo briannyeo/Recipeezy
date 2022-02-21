@@ -1,0 +1,10 @@
+.header {
+  background: green;
+  display: flex;
+}
+
+.nav-item {
+  align-items: right;
+  background-color: red;
+  float: right;
+}
