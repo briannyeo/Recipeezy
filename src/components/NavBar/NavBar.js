@@ -1,12 +1,13 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import "./Header.css";
+import "./NavBar.css";
+import chefHat from "../../images/chef.png";
 
 const Header = () => {
   return (
     <div className="header">
       <div className="headerLogo">
-        <img src="../src/images/chef.png" alt="chef-hat" />
+        <img src={chefHat} alt="chefhat" />
         <Link to="/">Recipeezy</Link>
       </div>
       <div className="nav-items">

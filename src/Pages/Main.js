@@ -1,9 +1,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import PlannedMeals from "./PlannedMeals";
+
 import Home from "./HomePage/Home";
-import About from "./About";
-import GroceryList from "./GroceryList";
+import About from "./AboutPage/About";
+
+import PlannedMeals from "./PlannedMealsPage/PlannedMeals";
+import GroceryList from "./GroceryListPage/GroceryList";
 
 function Main() {
   return (
