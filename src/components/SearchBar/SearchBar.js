@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./SearchBar.css";
 import axios from "axios";
+import searchIcon from "../../images/searchicon.png";
 
 const SearchBar = (props) => {
   const [recipeWord, setRecipeWord] = useState("");
@@ -12,13 +13,16 @@ const SearchBar = (props) => {
     setToggleSearch(!toggleSearch);
   };
 
+  const appId = "e07457e3";
+  const appKey = "126c04352c3086f78d428c7ce21556d0";
+
   useEffect(() => {
     axios
       .get(
-        `https://api.edamam.com/api/recipes/v2?type=public&q=${recipeWord}&app_id=e07457e3&app_key=126c04352c3086f78d428c7ce21556d0`
+        `https://api.edamam.com/api/recipes/v2?type=public&q=${recipeWord}&app_id=${appId}&app_key=${appKey}`
       )
       .then((res) => {
-        props.setSearchData(res.data.hits[0].recipe.images.SMALL.url);
+        props.setSearchData(res.data.hits[0].recipe.images.REGULAR.url);
       })
       .catch((err) => {
         console.log(err);
@@ -34,7 +38,7 @@ const SearchBar = (props) => {
         placeholder="Search for Recipes"
       />
       <button type="submit" onClick={handleSubmit}>
-        Submit
+        <img src={searchIcon} />
       </button>
     </div>
   );
