@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import "./Home.css";
 import SearchBar from "../../components/SearchBar/SearchBar";
 
 const Home = () => {
-  const [recipeWord, setRecipeWord] = useState("");
+  const [searchData, setSearchData] = useState();
 
   return (
     <div>
-      <SearchBar />
+      <SearchBar setSearchData={setSearchData} />
+      <img src={searchData} />
     </div>
   );
 };

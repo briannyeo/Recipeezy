@@ -7,8 +7,10 @@ const Header = () => {
   return (
     <div className="header">
       <div className="headerLogo">
-        <img src={chefHat} alt="chefhat" />
-        <Link to="/">Recipeezy</Link>
+        <Link to="/">
+          <img src={chefHat} alt="chefhat" />
+          Recipeezy
+        </Link>
       </div>
       <div className="nav-items">
         <span className="nav-item">
