@@ -11,7 +11,7 @@ function Main() {
   return (
     <main>
       <Routes>
-        <Route path="/Recipeezy" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="grocerylist" element={<GroceryList />} />
         <Route path="plannedmeals" element={<PlannedMeals />} />
         <Route path="about" element={<About />} />

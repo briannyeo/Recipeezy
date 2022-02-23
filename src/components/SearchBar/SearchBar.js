@@ -24,8 +24,17 @@ const SearchBar = (props) => {
         `https://api.edamam.com/api/recipes/v2?type=public&q=${recipeWord}&app_id=${appId}&app_key=${appKey}`
       )
       .then((res) => {
-        props.setSearchData(res.data.hits[0].recipe.images.REGULAR.url);
+        props.setSearchData({
+          url: res.data.hits[0].recipe.images.REGULAR.url,
+          title: res.data.hits[0].recipe.label,
+          ingredients: res.data.hits[0].recipe.ingredients.map((e) => e.food),
+          protein: res.data.hits[0].recipe.totalNutrients.PROCNT.quantity,
+          fats: res.data.hits[0].recipe.totalNutrients.FAT.quantity,
+          carbs: res.data.hits[0].recipe.totalNutrients.CHOCDF.quantity,
+          calories: res.data.hits[0].recipe.totalNutrients.ENERC_KCAL.quantity,
+        });
         console.log(res.data.hits[0].recipe.images.REGULAR.url);
+        console.log(res.data.hits[0].recipe.label);
       })
       .catch((err) => {
         console.log(err);
@@ -48,18 +57,3 @@ const SearchBar = (props) => {
 };
 
 export default SearchBar;
-
-// const serarchTerm = "chicken"
-// axios
-//   .get(
-//     `https://api.edamam.com/api/recipes/v2?type=public&q=${recipeWord}&app_id=e07457e3&app_key=126c04352c3086f78d428c7ce21556d0`
-//   )
-// ${searchTerm}.then((res) => {
-//     console.log(re
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
-// }, []);
-
-//setSearchData({url:..., data:...})
