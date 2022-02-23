@@ -3,13 +3,17 @@ import "./RecipeCard.css";
 
 const RecipeCard = (props) => {
   return (
-    <div className="recipecard">
+    <div className="card">
       <div className="recipeimage">
-        <img src={props.searchData}></img>
+        <img className="image" src={props.searchData} alt="food"></img>
       </div>
-      <div className="recipetitle">chicken</div>
+      <div className="container">Food Title</div>
     </div>
   );
 };
 
 export default RecipeCard;
+
+//const {searchData.url, data}
+
+//const {url, title ...} = props.searchData
