@@ -9,8 +9,10 @@ const SearchBar = (props) => {
   const [toggleSearch, setToggleSearch] = useState(false);
 
   const handleSubmit = () => {
-    setRecipeWord(searchWord);
-    setToggleSearch(!toggleSearch);
+    if (searchWord !== "") {
+      setRecipeWord(searchWord);
+      setToggleSearch(!toggleSearch);
+    } else return;
   };
 
   const appId = "e07457e3";
@@ -23,6 +25,7 @@ const SearchBar = (props) => {
       )
       .then((res) => {
         props.setSearchData(res.data.hits[0].recipe.images.REGULAR.url);
+        console.log(res.data.hits[0].recipe.images.REGULAR.url);
       })
       .catch((err) => {
         console.log(err);
@@ -58,3 +61,5 @@ export default SearchBar;
 //     console.log(err);
 //   });
 // }, []);
+
+//setSearchData({url:..., data:...})
