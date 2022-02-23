@@ -12,7 +12,6 @@ const Home = () => {
       <div className="searchBar">
         <SearchBar setSearchData={setSearchData} />
       </div>
-      {/* <RecipeCard searchData={searchData} /> */}
       <RecipeCardMUI searchData={searchData} />
     </div>
   );
