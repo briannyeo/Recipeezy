@@ -26,7 +26,7 @@ const SearchBar = (props) => {
       .then((res) => {
         props.setSearchData({
           url: res.data.hits[0].recipe.images.REGULAR.url,
-          title: res.data.hits[0].recipe.label,
+          //title: res.data.hits[0].recipe.label,
           ingredients: res.data.hits[0].recipe.ingredients.map((e) => e.food),
           protein: res.data.hits[0].recipe.totalNutrients.PROCNT.quantity,
           fats: res.data.hits[0].recipe.totalNutrients.FAT.quantity,
