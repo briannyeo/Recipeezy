@@ -26,15 +26,17 @@ const SearchBar = (props) => {
       .then((res) => {
         props.setSearchData({
           url: res.data.hits[0].recipe.images.REGULAR.url,
-          //title: res.data.hits[0].recipe.label,
+          title: res.data.hits[0].recipe.label,
           ingredients: res.data.hits[0].recipe.ingredients.map((e) => e.food),
+          quantity: res.data.hits[0].recipe.ingredients.map((e) => e.quantity),
+          measure: res.data.hits[0].recipe.ingredients.map((e) => e.measure),
           protein: res.data.hits[0].recipe.totalNutrients.PROCNT.quantity,
           fats: res.data.hits[0].recipe.totalNutrients.FAT.quantity,
           carbs: res.data.hits[0].recipe.totalNutrients.CHOCDF.quantity,
           calories: res.data.hits[0].recipe.totalNutrients.ENERC_KCAL.quantity,
         });
         console.log(res.data.hits[0].recipe.images.REGULAR.url);
-        console.log(res.data.hits[0].recipe.label);
+        console.log(res.data.hits[0].recipe.ingredients.map((e) => e.measure));
       })
       .catch((err) => {
         console.log(err);
