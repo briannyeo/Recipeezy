@@ -8,28 +8,28 @@ import Typography from "@mui/material/Typography";
 
 export default function RecipeCardMUI(props) {
   //const { url, title } = props.searchData;
+  //console.log(window.localStorage.getItem("a"));
 
   return (
     <Card sx={{ maxWidth: 300 }}>
-      {props.searchData ? (
+      {props.title ? (
         <>
-          {" "}
           <CardMedia
             component="img"
             height="300"
             width="300"
-            image=""
+            image={props.url}
             alt="food"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              title {/* {title || null} */}
+              {props.title || null}
             </Typography>
             <Typography variant="body2" color="text.secondary"></Typography>
           </CardContent>
           <CardActions className="btndiv">
             <Button className="removebtn" size="small">
-              Remove{" "}
+              Remove
             </Button>
             <Button className="addbtn" size="small">
               Add

@@ -1,13 +1,9 @@
-.container {
-  display: flex;
-  flex-direction: column;
-}
 .searchBar {
   position: relative;
   left: 50%;
-  top: 10%;
+  top: 50%;
 }
-.recipe-container {
+/* .recipe-container {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -21,4 +17,4 @@
   .recipe-container {
     flex-direction: row;
   }
-}
+} */

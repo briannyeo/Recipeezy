@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./SearchBar.css";
 import axios from "axios";
 import searchIcon from "../../images/searchicon.png";
+import { Link } from "react-router-dom";
 
 const SearchBar = (props) => {
   const [recipeWord, setRecipeWord] = useState("");
@@ -40,7 +41,9 @@ const SearchBar = (props) => {
         placeholder="Search for Recipes"
       />
       <button type="submit" onClick={handleSubmit}>
-        <img className="searchiconimg" src={searchIcon} />
+        <Link to="/results">
+          <img className="searchiconimg" src={searchIcon} alt="search" />
+        </Link>
       </button>
     </div>
   );
