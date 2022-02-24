@@ -8,11 +8,13 @@ const Home = () => {
   const [searchData, setSearchData] = useState();
 
   return (
-    <div>
+    <div className="container">
       <div className="searchBar">
         <SearchBar setSearchData={setSearchData} />
       </div>
-      <RecipeCardMUI searchData={searchData} />
+      <div className="recipe-container">
+        <RecipeCardMUI searchData={searchData} />
+      </div>
     </div>
   );
 };
