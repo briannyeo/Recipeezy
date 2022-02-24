@@ -6,15 +6,24 @@ import RecipeCardMUI from "../../components/RecipeCard/RecipeCardMUI";
 
 const Home = () => {
   const [searchData, setSearchData] = useState();
+  //console.log(searchData[0].recipe.images.REGULAR.url);
 
   return (
     <div className="container">
       <div className="searchBar">
         <SearchBar setSearchData={setSearchData} />
       </div>
-      <div className="recipe-container">
-        <RecipeCardMUI searchData={searchData} />
-      </div>
+      {searchData ? (
+        <>
+          <div className="recipe-container">
+            {searchData.map((e) => (
+              <RecipeCardMUI searchData={searchData} />
+            ))}
+          </div>
+        </>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 };
