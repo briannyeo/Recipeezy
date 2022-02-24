@@ -18,12 +18,12 @@ export default function RecipeCardMUI(props) {
             component="img"
             height="300"
             width="300"
-            image={props.searchData.url}
+            image=""
             alt="food"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              {props.searchData.title || null}
+              title {/* {title || null} */}
             </Typography>
             <Typography variant="body2" color="text.secondary"></Typography>
           </CardContent>
