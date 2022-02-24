@@ -50,7 +50,7 @@ const SearchBar = (props) => {
         placeholder="Search for Recipes"
       />
       <button type="submit" onClick={handleSubmit}>
-        <img src={searchIcon} />
+        <img className="searchiconimg" src={searchIcon} />
       </button>
     </div>
   );
