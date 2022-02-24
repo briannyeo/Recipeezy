@@ -1,3 +1,4 @@
+import { toUnitless } from "@mui/material/styles/cssUtils";
 import React from "react";
 import "./RecipeCard.css";
 
@@ -7,16 +8,12 @@ const RecipeCard = (props) => {
       <div class="card">
         <div class="card card-shadow">
           <div class="card-header card-image">
-            <img src={props.searchData} />
+            <img src={props.url} />
           </div>
-          <div class="card-body">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-            expedita nulla nobis cumque quisquam. Enim perspiciatis vero
-            laudantium nemo cum!
-          </div>
+          <div class="card-header">{props.title}</div>
           <div class="card-footer">
-            <button class="btn">Details</button>
-            <button class="btn btn-outline">Contact Seller</button>
+            <button class="btn">Remove</button>
+            <button class="btn btn-outline">Add</button>
           </div>
         </div>
       </div>

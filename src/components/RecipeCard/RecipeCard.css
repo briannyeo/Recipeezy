@@ -25,7 +25,8 @@
 }
 
 .card-header {
-  font-size: 7rem;
+  font-size: 1rem;
+  font-weight: bold;
   padding: var(--padding);
   padding-bottom: 0;
   margin-bottom: 0.5rem;

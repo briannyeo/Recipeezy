@@ -16,8 +16,14 @@ const Home = () => {
       {searchData ? (
         <>
           <div className="recipe-container">
-            {searchData.map((e) => (
+            {/* {searchData.map((e) => (
               <RecipeCardMUI
+                url={e.recipe.images.REGULAR.url}
+                title={e.recipe.label}
+              />
+            ))} */}
+            {searchData.map((e) => (
+              <RecipeCard
                 url={e.recipe.images.REGULAR.url}
                 title={e.recipe.label}
               />
