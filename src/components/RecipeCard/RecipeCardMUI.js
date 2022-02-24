@@ -16,7 +16,8 @@ export default function RecipeCardMUI(props) {
           {" "}
           <CardMedia
             component="img"
-            height="500"
+            height="300"
+            width="300"
             image={props.searchData.url}
             alt="food"
           />
@@ -24,16 +25,15 @@ export default function RecipeCardMUI(props) {
             <Typography gutterBottom variant="h5" component="div">
               {props.searchData.title || null}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla,
-              ex? Natus ut similique eius fuga laborum laboriosam porro totam
-              quidem adipisci sit, aliquam ratione cum illum, blanditiis quasi
-              soluta. Qui.
-            </Typography>
+            <Typography variant="body2" color="text.secondary"></Typography>
           </CardContent>
-          <CardActions>
-            <Button size="small">Remove </Button>
-            <Button size="small">Add</Button>
+          <CardActions className="btndiv">
+            <Button className="removebtn" size="small">
+              Remove{" "}
+            </Button>
+            <Button className="addbtn" size="small">
+              Add
+            </Button>
           </CardActions>
         </>
       ) : (
