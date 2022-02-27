@@ -5,10 +5,17 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { useNavigate } from "react-router-dom";
 
 export default function RecipeCardMUI(props) {
   //const { url, title } = props.searchData;
   //console.log(window.localStorage.getItem("a"));
+
+  // const navigate = useNavigate;
+
+  // const handleClick = () => {
+  //   navigate(`/results/${props.title}`);
+  // };
 
   return (
     <Card sx={{ maxWidth: 300 }}>
