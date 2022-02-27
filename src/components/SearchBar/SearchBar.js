@@ -11,7 +11,6 @@ const SearchBar = (props) => {
   const handleSubmit = () => {
     if (searchWord !== "") {
       setRecipeWord(searchWord);
-      //setToggleSearch(!toggleSearch);
     } else return;
   };
 
