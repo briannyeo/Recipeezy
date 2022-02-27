@@ -14,16 +14,11 @@ const SearchResults = (props) => {
             <div className="recipe-container">
               {searchData.map((e) => (
                 <RecipeCardMUI
+                  key={e.recipe.label}
                   url={e.recipe.images.REGULAR.url}
                   title={e.recipe.label}
                 />
               ))}
-              {/* {searchData.map((e) => (
-              <RecipeCard
-                url={e.recipe.images.REGULAR.url}
-                title={e.recipe.label}
-              />
-            ))} */}
             </div>
           </>
         ) : (
