@@ -6,8 +6,8 @@ import About from "./AboutPage/About";
 
 import PlannedMeals from "./PlannedMealsPage/PlannedMeals";
 import GroceryList from "./GroceryListPage/GroceryList";
-import SearchResults from "./SearchResultsPage/SearchResults";
-import RecipeDetails from "/RecipeDetails";
+import SearchResults from "./SearchResultsPage/SearchResultsPage";
+import SearchDetails from "./SearchResultsPage/SearchDetails";
 
 function Main() {
   return (
@@ -18,7 +18,7 @@ function Main() {
         <Route path="plannedmeals" element={<PlannedMeals />} />
         <Route path="about" element={<About />} />
         <Route path="results" element={<SearchResults />} />
-        <Route path="results/:id" element={<RecipeDetails />} />
+        <Route path="results/:id" element={<SearchDetails />} />
       </Routes>
     </main>
   );
