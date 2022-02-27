@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import RecipeCardMUI from "../../components/RecipeCard/RecipeCardMUI";
 import SearchBar from "../../components/SearchBar/SearchBar";
+import key from "weak-key";
 
 const SearchResults = (props) => {
   const [searchData, setSearchData] = useState();
@@ -14,7 +15,7 @@ const SearchResults = (props) => {
             <div className="recipe-container">
               {searchData.map((e) => (
                 <RecipeCardMUI
-                  key={e.recipe.label}
+                  key={key(e)}
                   url={e.recipe.images.REGULAR.url}
                   title={e.recipe.label}
                 />
