@@ -7,12 +7,11 @@ import { Link } from "react-router-dom";
 const SearchBar = (props) => {
   const [recipeWord, setRecipeWord] = useState("");
   const [searchWord, setSearchWord] = useState("");
-  const [toggleSearch, setToggleSearch] = useState(false);
 
   const handleSubmit = () => {
     if (searchWord !== "") {
       setRecipeWord(searchWord);
-      setToggleSearch(!toggleSearch);
+      //setToggleSearch(!toggleSearch);
     } else return;
   };
 
@@ -30,7 +29,7 @@ const SearchBar = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  }, [toggleSearch]);
+  }, [recipeWord]);
 
   return (
     <div className="searchForm">
