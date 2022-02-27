@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function RecipeCardMUI(props) {
   //const { url, title } = props.searchData;
@@ -21,13 +21,15 @@ export default function RecipeCardMUI(props) {
     <Card sx={{ maxWidth: 300 }}>
       {props.title ? (
         <>
-          <CardMedia
-            component="img"
-            height="300"
-            width="300"
-            image={props.url}
-            alt="food"
-          />
+          <Link to={`/results/${props.title}`}>
+            <CardMedia
+              component="img"
+              height="300"
+              width="300"
+              image={props.url}
+              alt="food"
+            />{" "}
+          </Link>
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {props.title || null}
