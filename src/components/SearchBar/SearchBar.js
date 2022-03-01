@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 import searchIcon from "../../images/searchicon.png";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = (props) => {
   const [searchWord, setSearchWord] = useState("");
-  // const [searchParam, setSearchParam] = useSearchParams("");
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  // const handleSubmit = () => {
-  //   console.log(searchParam);
-  //   setSearchParam({ q: searchWord });
-  // };
+  const handleSubmit = () => {
+    navigate(`/Recipeezy/results?search=${searchWord}`);
+  };
 
   return (
     <div className="searchForm">
@@ -22,11 +20,10 @@ const SearchBar = (props) => {
         }}
         placeholder="Search for Recipes"
       />
-      <Link to={`results/${searchWord}`}>
-        <button type="submit">
-          <img className="searchiconimg" src={searchIcon} alt="search" />
-        </button>
-      </Link>
+
+      <button onClick={handleSubmit} type="submit">
+        <img className="searchiconimg" src={searchIcon} alt="search" />
+      </button>
     </div>
   );
 };

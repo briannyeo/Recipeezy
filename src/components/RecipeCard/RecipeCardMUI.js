@@ -5,17 +5,29 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function RecipeCardMUI(props) {
   //const { url, title } = props.searchData;
   //console.log(window.localStorage.getItem("a"));
 
-  // const navigate = useNavigate;
+  const navigate = useNavigate();
 
-  // const handleClick = () => {
-  //   navigate(`/results/${props.title}`);
-  // };
+  const handleShow = () => {
+    props.handleShow({
+      title: props.title,
+      ingredients: props.ingredients,
+      quantity: props.quantity,
+      measure: props.measure,
+      protein: props.protein,
+      fats: props.fats,
+      carbs: props.carbs,
+      calories: props.calories,
+      instructions: props.instructions,
+    });
+    navigate(`/recipe/${props.title}`);
+  };
+
   const handleAddRecipe = () => {
     props.handleAdd({
       title: props.title,
@@ -35,15 +47,14 @@ export default function RecipeCardMUI(props) {
     <Card sx={{ maxWidth: 300 }}>
       {props.title ? (
         <>
-          <Link to={`/recipe/${props.title}`}>
-            <CardMedia
-              component="img"
-              height="300"
-              width="300"
-              image={props.url}
-              alt="food"
-            />{" "}
-          </Link>
+          <CardMedia
+            onClick={handleShow}
+            component="img"
+            height="300"
+            width="300"
+            image={props.url}
+            alt="food"
+          />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {props.title || null}
