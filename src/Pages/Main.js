@@ -7,7 +7,7 @@ import About from "./AboutPage/About";
 import PlannedMeals from "./PlannedMealsPage/PlannedMeals";
 import GroceryList from "./GroceryListPage/GroceryList";
 import SearchResults from "./SearchResultsPage/SearchResultsPage";
-import SearchDetails from "./SearchResultsPage/SearchDetails";
+import RecipeDetails from "./RecipeDetailsPage/RecipeDetails";
 import NoMatch from "./NoMatchPage";
 
 function Main() {
@@ -18,8 +18,8 @@ function Main() {
         <Route path="grocerylist" element={<GroceryList />} />
         <Route path="plannedmeals" element={<PlannedMeals />} />
         <Route path="about" element={<About />} />
-        <Route path="/results/" element={<SearchResults />} />
-        <Route path="results/:id" element={<SearchDetails />} />
+        <Route path="results/:id" element={<SearchResults />} />
+        <Route path="recipe/:recipetitle" element={<RecipeDetails />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </main>
