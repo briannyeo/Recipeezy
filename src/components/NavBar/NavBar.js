@@ -7,20 +7,20 @@ const Header = () => {
   return (
     <div className="header">
       <div className="headerLogo">
-        <Link to="/">
+        <Link to="/Recipeezy">
           <img className="navbarimg" src={chefHat} alt="chefhat" />
           Recipeezy
         </Link>
       </div>
       <div className="nav-items">
         <span className="nav-item">
-          <Link to="/about">About</Link>
+          <Link to="/Recipeezy/about">About</Link>
         </span>
         <span className="nav-item">
-          <Link to="/plannedmeals">Planned Meals</Link>
+          <Link to="/Recipeezy/plannedmeals">Planned Meals</Link>
         </span>
         <span className="nav-item">
-          <Link to="/grocerylist">Grocery List</Link>
+          <Link to="/Recipeezy/grocerylist">Grocery List</Link>
         </span>
       </div>
       <Outlet />
