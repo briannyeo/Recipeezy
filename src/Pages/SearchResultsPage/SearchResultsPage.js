@@ -4,20 +4,23 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import axios from "axios";
 import "./SearchResultsPage.css";
 import key from "weak-key";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams, useSearchParams } from "react-router-dom";
 
 const SearchResults = (props) => {
   const [searchData, setSearchData] = useState();
   const [addRecipe, setAddRecipe] = useState([]);
   const [removeRecipe, setRemoveRecipe] = useState();
-  //const [individualRecipe, setIndividualRecipe] = useState({})
-  //console.log(addRecipe);
-  //console.log(searchData);
+  const [individualRecipe, setIndividualRecipe] = useState({});
 
-  const { id } = useParams(); //id taken from main.js path
-  console.log("id is: " + id);
+  const location = useLocation(); // to check if url is updated
+  const params = new URLSearchParams(window.location.search);
+  const q = params.get("search"); //returns fish
+  //const [params, setParams] = useParams();
 
-  const { query } = useLocation(); // to check if url is updated
+  const handleShow = (item) => {
+    setIndividualRecipe(item);
+  };
+  //console.log(individualRecipe);
 
   //ADD RECIPE TO PLANNEDMEALS STATE
   const handleAdd = (item) => {
@@ -30,7 +33,7 @@ const SearchResults = (props) => {
   useEffect(() => {
     axios
       .get(
-        `https://api.edamam.com/api/recipes/v2?type=public&q=${id}&app_id=${appId}&app_key=${appKey}`
+        `https://api.edamam.com/api/recipes/v2?type=public&q=${q}&app_id=${appId}&app_key=${appKey}`
       )
       .then((res) => {
         setSearchData(res.data.hits);
@@ -38,7 +41,7 @@ const SearchResults = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  }, [query]);
+  }, [location]);
 
   return (
     <div>
@@ -63,6 +66,7 @@ const SearchResults = (props) => {
                   instructions={recipe.recipe.url}
                   handleAdd={handleAdd}
                   setRemoveRecipe={setRemoveRecipe}
+                  handleShow={handleShow}
                 />
               ))}
             </div>
