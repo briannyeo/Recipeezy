@@ -9,20 +9,21 @@ import GroceryList from "./GroceryListPage/GroceryList";
 import SearchResults from "./SearchResultsPage/SearchResultsPage";
 import RecipeDetails from "./RecipeDetailsPage/RecipeDetails";
 import NoMatch from "./NoMatchPage";
+import SearchBar from "../components/SearchBar/SearchBar";
 
 function Main() {
   return (
     <main>
       <Routes>
-        <Route path="Recipeezy" element={<Home />} />
-        <Route path="Recipeezy/grocerylist" element={<GroceryList />} />
-        <Route path="Recipeezy/plannedmeals" element={<PlannedMeals />} />
-        <Route path="Recipeezy/about" element={<About />} />
-        <Route path="Recipeezy/results/:id" element={<SearchResults />} />
-        <Route
-          path="Recipeezy/recipe/:recipetitle"
-          element={<RecipeDetails />}
-        />
+        <Route path="Recipeezy" element={<Home />}>
+          <Route index element={<SearchBar />} />
+          <Route path="grocerylist" element={<GroceryList />} />
+          <Route path="plannedmeals" element={<PlannedMeals />} />
+          <Route path="about" element={<About />} />
+          <Route path="results" element={<SearchResults />} />
+          <Route path="recipe/:recipetitle" element={<RecipeDetails />} />
+          <Route path="*" element={<NoMatch />} />
+        </Route>
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </main>

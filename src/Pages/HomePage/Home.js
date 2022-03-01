@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./Home.css";
-import SearchBar from "../../components/SearchBar/SearchBar";
+import { Outlet } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="searchBar">
-      <SearchBar />
+    <div className="home">
+      <Outlet />
     </div>
   );
 };
