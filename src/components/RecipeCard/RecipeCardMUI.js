@@ -35,7 +35,7 @@ export default function RecipeCardMUI(props) {
     <Card sx={{ maxWidth: 300 }}>
       {props.title ? (
         <>
-          <Link to={`/results/${props.title}`}>
+          <Link to={`/recipe/${props.title}`}>
             <CardMedia
               component="img"
               height="300"
