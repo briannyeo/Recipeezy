@@ -4,7 +4,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import axios from "axios";
 import "./SearchResultsPage.css";
 import key from "weak-key";
-import { useLocation, useParams, useSearchParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const SearchResults = (props) => {
   const [searchData, setSearchData] = useState();
