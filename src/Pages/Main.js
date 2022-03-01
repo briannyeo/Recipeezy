@@ -8,17 +8,19 @@ import PlannedMeals from "./PlannedMealsPage/PlannedMeals";
 import GroceryList from "./GroceryListPage/GroceryList";
 import SearchResults from "./SearchResultsPage/SearchResultsPage";
 import SearchDetails from "./SearchResultsPage/SearchDetails";
+import NoMatch from "./NoMatchPage";
 
 function Main() {
   return (
     <main>
       <Routes>
-        <Route path="/Recipeezy" element={<Home />} />
+        <Route index element={<Home />} />
         <Route path="grocerylist" element={<GroceryList />} />
         <Route path="plannedmeals" element={<PlannedMeals />} />
         <Route path="about" element={<About />} />
-        <Route path="results" element={<SearchResults />} />
+        <Route path="/results/" element={<SearchResults />} />
         <Route path="results/:id" element={<SearchDetails />} />
+        <Route path="*" element={<NoMatch />} />
       </Routes>
     </main>
   );
