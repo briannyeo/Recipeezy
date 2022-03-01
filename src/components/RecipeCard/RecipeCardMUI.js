@@ -16,8 +16,8 @@ export default function RecipeCardMUI(props) {
   // const handleClick = () => {
   //   navigate(`/results/${props.title}`);
   // };
-  const handleAdd = () => {
-    props.setAddRecipe({
+  const handleAddRecipe = () => {
+    props.handleAdd({
       title: props.title,
       url: props.url,
       ingredients: props.ingredients,
@@ -54,7 +54,7 @@ export default function RecipeCardMUI(props) {
             <Button className="removebtn" size="small">
               Remove
             </Button>
-            <Button onClick={handleAdd} className="addbtn" size="small">
+            <Button onClick={handleAddRecipe} className="addbtn" size="small">
               Add
             </Button>
           </CardActions>
