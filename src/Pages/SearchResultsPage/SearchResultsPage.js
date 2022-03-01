@@ -1,24 +1,49 @@
-import React, { useState, useContext, createContext } from "react";
+import React, { useState, useEffect } from "react";
 import RecipeCardMUI from "../../components/RecipeCard/RecipeCardMUI";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import { useLocation } from "react-router-dom";
+import axios from "axios";
 import "./SearchResultsPage.css";
 import key from "weak-key";
+import { useLocation, useParams } from "react-router-dom";
 
 const SearchResults = (props) => {
-  // const searchData = props.searchData;
-  // const setSearchData = props.setSearchData;
   const [searchData, setSearchData] = useState();
-
-  const [addRecipe, setAddRecipe] = useState();
+  const [addRecipe, setAddRecipe] = useState([]);
   const [removeRecipe, setRemoveRecipe] = useState();
-
-  console.log(addRecipe);
+  //const [individualRecipe, setIndividualRecipe] = useState({})
+  //console.log(addRecipe);
   //console.log(searchData);
+
+  const { id } = useParams(); //id taken from main.js path
+  console.log("id is: " + id);
+
+  const { query } = useLocation(); // to check if url is updated
+
+  //ADD RECIPE TO PLANNEDMEALS STATE
+  const handleAdd = (item) => {
+    setAddRecipe([...addRecipe, item]);
+  };
+
+  //AXIOS CALL
+  const appId = "e07457e3";
+  const appKey = "126c04352c3086f78d428c7ce21556d0";
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.edamam.com/api/recipes/v2?type=public&q=${id}&app_id=${appId}&app_key=${appKey}`
+      )
+      .then((res) => {
+        setSearchData(res.data.hits);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [query]);
 
   return (
     <div>
-      <SearchBar setSearchData={setSearchData} />
+      <SearchBar />
+
       <>
         {searchData ? (
           <>
@@ -36,7 +61,7 @@ const SearchResults = (props) => {
                   carbs={recipe.recipe.totalNutrients.CHOCDF.quantity}
                   calories={recipe.recipe.totalNutrients.ENERC_KCAL.quantity}
                   instructions={recipe.recipe.url}
-                  setAddRecipe={setAddRecipe}
+                  handleAdd={handleAdd}
                   setRemoveRecipe={setRemoveRecipe}
                 />
               ))}
