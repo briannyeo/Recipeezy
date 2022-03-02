@@ -3,11 +3,8 @@ import "./Home.css";
 import { Outlet } from "react-router-dom";
 
 const Home = () => {
-  return (
-    <div className="home">
-      <Outlet />
-    </div>
-  );
+  const [plannedRecipes, setPlannedRecipes] = useState([]);
+  return <Outlet context={[plannedRecipes, setPlannedRecipes]} />;
 };
 
 export default Home;
