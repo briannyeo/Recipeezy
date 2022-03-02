@@ -9,7 +9,9 @@ const PlannedMeals = () => {
   return (
     <div className="PlannedMeals">
       {plannedRecipes.map((e) => (
-        <h1>{e.title}</h1>
+        <div>
+          <RecipeCardMUI url={e.url} title={e.title} />
+        </div>
       ))}
     </div>
   );
