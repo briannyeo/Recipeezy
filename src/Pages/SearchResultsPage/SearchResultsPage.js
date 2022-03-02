@@ -4,27 +4,32 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import axios from "axios";
 import "./SearchResultsPage.css";
 import key from "weak-key";
-import { useLocation } from "react-router-dom";
+import { useLocation, useOutletContext } from "react-router-dom";
 
 const SearchResults = (props) => {
   const [searchData, setSearchData] = useState();
-  const [addRecipe, setAddRecipe] = useState([]);
-  const [removeRecipe, setRemoveRecipe] = useState();
-  const [individualRecipe, setIndividualRecipe] = useState({});
+  const [plannedRecipes, setPlannedRecipes] = useOutletContext();
 
+  //TO GET PARAMS FROM URL
   const location = useLocation(); // to check if url is updated
   const params = new URLSearchParams(window.location.search);
-  const q = params.get("search"); //returns fish
-  //const [params, setParams] = useParams();
+  const q = params.get("search");
 
-  const handleShow = (item) => {
-    setIndividualRecipe(item);
-  };
-  //console.log(individualRecipe);
+  //const [individualRecipe, setIndividualRecipe] = useState({});
+  //SHOW DETAILS OF INDIVIDUAL RECIPE
+  // const handleShow = (item) => {
+  //   setIndividualRecipe(item);
+  // };
 
   //ADD RECIPE TO PLANNEDMEALS STATE
   const handleAdd = (item) => {
-    setAddRecipe([...addRecipe, item]);
+    setPlannedRecipes([...plannedRecipes, item]);
+    console.log(plannedRecipes);
+  };
+  const handleRemove = (item) => {
+    const filteredRecipes = [...plannedRecipes].filter((e) => e !== item);
+    setPlannedRecipes(filteredRecipes);
+    console.log(plannedRecipes);
   };
 
   //AXIOS CALL
@@ -53,6 +58,7 @@ const SearchResults = (props) => {
             <div className="recipe-container">
               {searchData.map((recipe) => (
                 <RecipeCardMUI
+                  // searchdata={searchData}
                   key={key(recipe)}
                   url={recipe.recipe.images.REGULAR.url}
                   title={recipe.recipe.label}
@@ -65,8 +71,7 @@ const SearchResults = (props) => {
                   calories={recipe.recipe.totalNutrients.ENERC_KCAL.quantity}
                   instructions={recipe.recipe.url}
                   handleAdd={handleAdd}
-                  setRemoveRecipe={setRemoveRecipe}
-                  handleShow={handleShow}
+                  handleRemove={handleRemove}
                 />
               ))}
             </div>

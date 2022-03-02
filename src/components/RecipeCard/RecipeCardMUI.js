@@ -11,11 +11,30 @@ export default function RecipeCardMUI(props) {
   //const { url, title } = props.searchData;
   //console.log(window.localStorage.getItem("a"));
 
-  const navigate = useNavigate();
+  // const searchData = props.searchData;
+  // const title = searchData.recipe.label;
 
-  const handleShow = () => {
-    props.handleShow({
+  //SHOW INDIVIDUAL RECIPE
+  // const navigate = useNavigate();
+  // const handleShow = () => {
+  //   props.handleShow({
+  //     title: props.title,
+  //     ingredients: props.ingredients,
+  //     quantity: props.quantity,
+  //     measure: props.measure,
+  //     protein: props.protein,
+  //     fats: props.fats,
+  //     carbs: props.carbs,
+  //     calories: props.calories,
+  //     instructions: props.instructions,
+  //   });
+  //   navigate(`/recipe/${props.title}`);
+  // };
+
+  const handleAddRecipe = () => {
+    props.handleAdd({
       title: props.title,
+      url: props.url,
       ingredients: props.ingredients,
       quantity: props.quantity,
       measure: props.measure,
@@ -25,11 +44,10 @@ export default function RecipeCardMUI(props) {
       calories: props.calories,
       instructions: props.instructions,
     });
-    navigate(`/recipe/${props.title}`);
   };
 
-  const handleAddRecipe = () => {
-    props.handleAdd({
+  const handleRemoveRecipe = () => {
+    props.handleRemove({
       title: props.title,
       url: props.url,
       ingredients: props.ingredients,
@@ -48,7 +66,7 @@ export default function RecipeCardMUI(props) {
       {props.title ? (
         <>
           <CardMedia
-            onClick={handleShow}
+            // onClick={handleShow}
             component="img"
             height="300"
             width="300"
@@ -62,7 +80,11 @@ export default function RecipeCardMUI(props) {
             <Typography variant="body2" color="text.secondary"></Typography>
           </CardContent>
           <CardActions className="btndiv">
-            <Button className="removebtn" size="small">
+            <Button
+              onClick={handleRemoveRecipe}
+              className="removebtn"
+              size="small"
+            >
               Remove
             </Button>
             <Button onClick={handleAddRecipe} className="addbtn" size="small">
