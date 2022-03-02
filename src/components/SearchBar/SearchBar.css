@@ -1,3 +1,10 @@
+/* .searchbar {
+  position: absolute;
+  right: 40%;
+  transform: translate(0, -50%);
+  background-color: green;
+} */
+
 .searchiconimg {
   max-width: 1em;
   height: auto;
