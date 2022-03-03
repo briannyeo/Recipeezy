@@ -58,6 +58,7 @@ const SearchResults = (props) => {
                   fats={recipe.recipe.totalNutrients.FAT.quantity}
                   carbs={recipe.recipe.totalNutrients.CHOCDF.quantity}
                   calories={recipe.recipe.totalNutrients.ENERC_KCAL.quantity}
+                  ingredientLines={recipe.recipe.ingredientLines}
                   instructions={recipe.recipe.url}
                   // handleAdd={handleAdd}
                   // handleRemove={handleRemove}

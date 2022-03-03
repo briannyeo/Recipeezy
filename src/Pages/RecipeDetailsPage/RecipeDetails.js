@@ -5,6 +5,7 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import { Link } from "@material-ui/core";
 
 export default function ScrollDialog(props) {
   const [open, setOpen] = React.useState(false);
@@ -20,6 +21,7 @@ export default function ScrollDialog(props) {
     carbs,
     calories,
     instructions,
+    ingredientLines,
   } = props;
 
   const handleClickOpen = (scrollType) => () => {
@@ -41,11 +43,13 @@ export default function ScrollDialog(props) {
     }
   }, [open]);
 
-  const ingredientMeasurements = [{ quantity }, { measure }, { ingredients }];
-  // console.log("quantity :" + quantity); //quantity :2,8,16
-  // console.log("measure : " + measure); //bunch,tablespoon,ounce
+  //const ingredientMeasurements = [];
+  //const ingredientMeasurements = [[quantity], [measure], [ingredients]];
+
+  //console.log("quantity :" + quantity); //quantity :2,8,16
+  //console.log("measure : " + measure); //bunch,tablespoon,ounce
   // console.log("ingredients: " + ingredients); //scallions,butter,fish filets
-  // console.log("ingredientMeasurements: " + ingredientMeasurements); //[object Object],[object Object],[object Object]
+  //console.log("ingredientMeasurements: " + ingredientMeasurements); //[object Object],[object Object],[object Object]
 
   return (
     <div>
@@ -66,11 +70,14 @@ export default function ScrollDialog(props) {
             ref={descriptionElementRef}
             tabIndex={-1}
           >
-            Ingredients:
-            {ingredientMeasurements.map((e) => {
-              //console.log(e);
-              return `${e.quantity} +++ ${e.measure} +++ ${e.ingredients} `;
-            })}
+            Ingredients:{" "}
+            {ingredientLines.map((e) => (
+              <li>{e}</li>
+            ))}
+            Recipe:{" "}
+            <a href={instructions} target="_blank" rel="noopener noreferrer">
+              Learn how to cook!
+            </a>
           </DialogContentText>
         </DialogContent>
       </Dialog>
