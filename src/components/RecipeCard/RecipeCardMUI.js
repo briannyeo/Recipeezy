@@ -37,17 +37,17 @@ export default function RecipeCardMUI(props) {
 
   const handleAdd = (item) => {
     setPlannedRecipes([...plannedRecipes, item]);
-    console.log(plannedRecipes);
+    //console.log(plannedRecipes);
   };
   const handleRemove = (item) => {
     console.log("item: ", item);
     const filteredRecipes = plannedRecipes.filter((e) => {
-      console.log("e", e);
+      //console.log("e", e);
       return e.id !== item;
     });
 
     setPlannedRecipes(filteredRecipes);
-    console.log(plannedRecipes);
+    //console.log(plannedRecipes);
   };
 
   const handleAddRecipe = () => {
@@ -62,9 +62,11 @@ export default function RecipeCardMUI(props) {
       fats: props.fats,
       carbs: props.carbs,
       calories: props.calories,
+      ingredientLines: props.ingredientLines,
       instructions: props.instructions,
     });
   };
+  console.log(props.ingredients.text);
 
   const handleRemoveRecipe = () => {
     handleRemove(props.id);
@@ -117,6 +119,7 @@ export default function RecipeCardMUI(props) {
         carbs={props.carbs}
         calories={props.calories}
         instructions={props.instructions}
+        ingredientLines={props.ingredientLines}
       />
     </>
   );
