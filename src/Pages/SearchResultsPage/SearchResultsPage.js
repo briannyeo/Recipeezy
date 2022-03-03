@@ -8,7 +8,6 @@ import { useLocation, useOutletContext } from "react-router-dom";
 
 const SearchResults = (props) => {
   const [searchData, setSearchData] = useState();
-  const [plannedRecipes, setPlannedRecipes] = useOutletContext();
 
   //TO GET PARAMS FROM URL
   const location = useLocation(); // to check if url is updated
@@ -20,17 +19,6 @@ const SearchResults = (props) => {
   // const handleShow = (item) => {
   //   setIndividualRecipe(item);
   // };
-
-  //ADD RECIPE TO PLANNEDMEALS STATE
-  const handleAdd = (item) => {
-    setPlannedRecipes([...plannedRecipes, item]);
-    console.log(plannedRecipes);
-  };
-  const handleRemove = (item) => {
-    const filteredRecipes = [...plannedRecipes].filter((e) => e !== item);
-    setPlannedRecipes(filteredRecipes);
-    console.log(plannedRecipes);
-  };
 
   //AXIOS CALL
   const appId = "e07457e3";
@@ -70,8 +58,8 @@ const SearchResults = (props) => {
                   carbs={recipe.recipe.totalNutrients.CHOCDF.quantity}
                   calories={recipe.recipe.totalNutrients.ENERC_KCAL.quantity}
                   instructions={recipe.recipe.url}
-                  handleAdd={handleAdd}
-                  handleRemove={handleRemove}
+                  // handleAdd={handleAdd}
+                  // handleRemove={handleRemove}
                 />
               ))}
             </div>

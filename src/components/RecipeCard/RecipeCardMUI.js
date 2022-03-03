@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useOutletContext } from "react-router-dom";
 
 export default function RecipeCardMUI(props) {
   //const { url, title } = props.searchData;
@@ -31,8 +31,21 @@ export default function RecipeCardMUI(props) {
   //   navigate(`/recipe/${props.title}`);
   // };
 
+  const [plannedRecipes, setPlannedRecipes] = useOutletContext();
+
+  //ADD RECIPE TO PLANNEDMEALS STATE
+  const handleAdd = (item) => {
+    setPlannedRecipes([...plannedRecipes, item]);
+    console.log(plannedRecipes);
+  };
+  const handleRemove = (item) => {
+    const filteredRecipes = [...plannedRecipes].filter((e) => e !== item);
+    setPlannedRecipes(filteredRecipes);
+    console.log(plannedRecipes);
+  };
+
   const handleAddRecipe = () => {
-    props.handleAdd({
+    handleAdd({
       title: props.title,
       url: props.url,
       ingredients: props.ingredients,
@@ -47,7 +60,7 @@ export default function RecipeCardMUI(props) {
   };
 
   const handleRemoveRecipe = () => {
-    props.handleRemove({
+    handleRemove({
       title: props.title,
       url: props.url,
       ingredients: props.ingredients,
