@@ -10,7 +10,7 @@ const PlannedMeals = () => {
     <div className="PlannedMeals">
       {plannedRecipes.map((e) => (
         <div>
-          <RecipeCardMUI key={key(e)} url={e.url} title={e.title} />
+          <RecipeCardMUI url={e.url} title={e.title} id={e.id} />
         </div>
       ))}
     </div>

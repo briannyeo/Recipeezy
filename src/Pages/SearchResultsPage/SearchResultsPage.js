@@ -48,6 +48,7 @@ const SearchResults = (props) => {
                 <RecipeCardMUI
                   // searchdata={searchData}
                   key={key(recipe)}
+                  id={key(recipe)}
                   url={recipe.recipe.images.REGULAR.url}
                   title={recipe.recipe.label}
                   ingredients={recipe.recipe.ingredients.map((e) => e.food)}
