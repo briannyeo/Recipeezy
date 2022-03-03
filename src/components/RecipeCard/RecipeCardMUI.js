@@ -9,28 +9,7 @@ import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import ScrollDialog from "../../Pages/RecipeDetailsPage/RecipeDetails";
 
 export default function RecipeCardMUI(props) {
-  //const { url, title } = props.searchData;
   //console.log(window.localStorage.getItem("a"));
-
-  // const searchData = props.searchData;
-  // const title = searchData.recipe.label;
-
-  //SHOW INDIVIDUAL RECIPE
-  // const navigate = useNavigate();
-  // const handleShow = () => {
-  //   props.handleShow({
-  //     title: props.title,
-  //     ingredients: props.ingredients,
-  //     quantity: props.quantity,
-  //     measure: props.measure,
-  //     protein: props.protein,
-  //     fats: props.fats,
-  //     carbs: props.carbs,
-  //     calories: props.calories,
-  //     instructions: props.instructions,
-  //   });
-  //   navigate(`/recipe/${props.title}`);
-  // };
 
   //ADD RECIPE TO PLANNEDMEALS STATE
   const [plannedRecipes, setPlannedRecipes] = useOutletContext();
@@ -66,7 +45,6 @@ export default function RecipeCardMUI(props) {
       instructions: props.instructions,
     });
   };
-  console.log(props.ingredients.text);
 
   const handleRemoveRecipe = () => {
     handleRemove(props.id);

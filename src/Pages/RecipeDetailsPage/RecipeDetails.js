@@ -71,8 +71,8 @@ export default function ScrollDialog(props) {
             tabIndex={-1}
           >
             Ingredients:{" "}
-            {ingredientLines.map((e) => (
-              <li>{e}</li>
+            {ingredientLines.map((e, index) => (
+              <li key={index}>{e}</li>
             ))}
             Recipe:{" "}
             <a href={instructions} target="_blank" rel="noopener noreferrer">

@@ -5,19 +5,18 @@ import key from "weak-key";
 
 const PlannedMeals = () => {
   const [plannedRecipes, setPlannedRecipes] = useOutletContext();
-  console.log("Planned Meals: " + plannedRecipes);
+
   return (
     <div className="PlannedMeals">
       {plannedRecipes.map((e) => (
-        <div>
-          <RecipeCardMUI
-            key={key(e)}
-            url={e.url}
-            title={e.title}
-            id={e.id}
-            ingredientLines={e.ingredientLines}
-          />
-        </div>
+        <RecipeCardMUI
+          key={key(e)}
+          url={e.url}
+          title={e.title}
+          id={e.id}
+          ingredientLines={e.ingredientLines}
+          instructions={e.instructions}
+        />
       ))}
     </div>
   );
