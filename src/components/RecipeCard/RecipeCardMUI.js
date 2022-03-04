@@ -80,7 +80,7 @@ export default function RecipeCardMUI(props) {
 
   return (
     <>
-      <Card sx={{ maxWidth: 300 }}>
+      <Card sx={{ maxWidth: 250 }}>
         {props.title ? (
           <>
             <CardMedia
@@ -101,7 +101,7 @@ export default function RecipeCardMUI(props) {
               <Button
                 onClick={handleRemoveRecipe}
                 className="removebtn"
-                size="small"
+                size="large"
               >
                 Remove
               </Button>

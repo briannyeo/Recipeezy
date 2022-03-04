@@ -5,6 +5,8 @@ import axios from "axios";
 import "./SearchResultsPage.css";
 import key from "weak-key";
 import { useLocation, useOutletContext } from "react-router-dom";
+import { Grid } from "@mui/material";
+import Box from "@mui/material/Box";
 
 const SearchResults = (props) => {
   const [searchData, setSearchData] = useState();
@@ -43,28 +45,40 @@ const SearchResults = (props) => {
       <>
         {searchData ? (
           <>
-            <div className="recipe-container">
-              {searchData.map((recipe) => (
-                <RecipeCardMUI
-                  // searchdata={searchData}
-                  key={key(recipe)}
-                  id={key(recipe)}
-                  url={recipe.recipe.images.REGULAR.url}
-                  title={recipe.recipe.label}
-                  ingredients={recipe.recipe.ingredients.map((e) => e.food)}
-                  quantity={recipe.recipe.ingredients.map((e) => e.quantity)}
-                  measure={recipe.recipe.ingredients.map((e) => e.measure)}
-                  protein={recipe.recipe.totalNutrients.PROCNT.quantity}
-                  fats={recipe.recipe.totalNutrients.FAT.quantity}
-                  carbs={recipe.recipe.totalNutrients.CHOCDF.quantity}
-                  calories={recipe.recipe.totalNutrients.ENERC_KCAL.quantity}
-                  ingredientLines={recipe.recipe.ingredientLines}
-                  instructions={recipe.recipe.url}
-                  // handleAdd={handleAdd}
-                  // handleRemove={handleRemove}
-                />
-              ))}
-            </div>
+            <Box sx={{ flexGrow: 1 }}>
+              <Grid
+                container
+                spacing={{ xs: 2, md: 3 }}
+                columns={{ xs: 4, sm: 8, md: 12 }}
+              >
+                {searchData.map((recipe, index) => (
+                  <Grid item xs={2} sm={4} md={4} key={index}>
+                    <RecipeCardMUI
+                      // searchdata={searchData}
+                      key={key(recipe)}
+                      id={key(recipe)}
+                      url={recipe.recipe.images.REGULAR.url}
+                      title={recipe.recipe.label}
+                      ingredients={recipe.recipe.ingredients.map((e) => e.food)}
+                      quantity={recipe.recipe.ingredients.map(
+                        (e) => e.quantity
+                      )}
+                      measure={recipe.recipe.ingredients.map((e) => e.measure)}
+                      protein={recipe.recipe.totalNutrients.PROCNT.quantity}
+                      fats={recipe.recipe.totalNutrients.FAT.quantity}
+                      carbs={recipe.recipe.totalNutrients.CHOCDF.quantity}
+                      calories={
+                        recipe.recipe.totalNutrients.ENERC_KCAL.quantity
+                      }
+                      ingredientLines={recipe.recipe.ingredientLines}
+                      instructions={recipe.recipe.url}
+                      // handleAdd={handleAdd}
+                      // handleRemove={handleRemove}
+                    />
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
           </>
         ) : (
           <div></div>
