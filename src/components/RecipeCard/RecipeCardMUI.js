@@ -5,7 +5,12 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Link, useNavigate, useOutletContext } from "react-router-dom";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import { useOutletContext } from "react-router-dom";
 import ScrollDialog from "../../Pages/RecipeDetailsPage/RecipeDetails";
 
 export default function RecipeCardMUI(props) {
@@ -50,13 +55,36 @@ export default function RecipeCardMUI(props) {
     handleRemove(props.id);
   };
 
+  //HANDLE DIALOG BOX
+  const [open, setOpen] = React.useState(false);
+  const [scroll, setScroll] = React.useState("paper");
+
+  const handleClickOpen = (scrollType) => () => {
+    setOpen(true);
+    setScroll(scrollType);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const descriptionElementRef = React.useRef(null);
+  React.useEffect(() => {
+    if (open) {
+      const { current: descriptionElement } = descriptionElementRef;
+      if (descriptionElement !== null) {
+        descriptionElement.focus();
+      }
+    }
+  }, [open]);
+
   return (
     <>
       <Card sx={{ maxWidth: 300 }}>
         {props.title ? (
           <>
             <CardMedia
-              // onClick={handleShow}
+              onClick={handleClickOpen("paper")}
               component="img"
               height="300"
               width="300"
@@ -86,19 +114,37 @@ export default function RecipeCardMUI(props) {
           <div></div>
         )}
       </Card>
-      <ScrollDialog
-        image={props.url}
-        title={props.title}
-        ingredients={props.ingredients}
-        quantity={props.quantity}
-        measure={props.measure}
-        protein={props.protein}
-        fats={props.fats}
-        carbs={props.carbs}
-        calories={props.calories}
-        instructions={props.instructions}
-        ingredientLines={props.ingredientLines}
-      />
+
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        scroll={scroll}
+        aria-labelledby="scroll-dialog-title"
+        aria-describedby="scroll-dialog-description"
+      >
+        <DialogTitle id="scroll-dialog-title">{props.title}</DialogTitle>
+        <DialogContent dividers={scroll === "paper"}>
+          <img src={props.url}></img>
+          <DialogContentText
+            id="scroll-dialog-description"
+            ref={descriptionElementRef}
+            tabIndex={-1}
+          >
+            Ingredients:{" "}
+            {props.ingredientLines.map((e, index) => (
+              <li key={index}>{e}</li>
+            ))}
+            Recipe:{" "}
+            <a
+              href={props.instructions}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn how to cook!
+            </a>
+          </DialogContentText>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }
