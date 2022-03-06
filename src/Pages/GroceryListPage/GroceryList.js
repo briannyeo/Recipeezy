@@ -25,7 +25,10 @@ export default function GroceryList() {
       {plannedRecipes.map((el) =>
         el.ingredientLines.map((e) => (
           <tr>
-            <td>{e}</td>
+            <td>{e} </td>
+            <td>
+              <input type="checkbox" />
+            </td>
           </tr>
         ))
       )}
