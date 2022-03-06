@@ -5,7 +5,6 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import { Link } from "@material-ui/core";
 
 export default function ScrollDialog(props) {
   const [open, setOpen] = React.useState(false);
@@ -48,7 +47,7 @@ export default function ScrollDialog(props) {
 
   //console.log("quantity :" + quantity); //quantity :2,8,16
   //console.log("measure : " + measure); //bunch,tablespoon,ounce
-  // console.log("ingredients: " + ingredients); //scallions,butter,fish filets
+  //console.log("ingredients: " + ingredients); //scallions,butter,fish filets
   //console.log("ingredientMeasurements: " + ingredientMeasurements); //[object Object],[object Object],[object Object]
 
   return (
