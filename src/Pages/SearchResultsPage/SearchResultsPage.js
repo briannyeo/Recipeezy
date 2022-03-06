@@ -4,7 +4,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import axios from "axios";
 import "./SearchResultsPage.css";
 import key from "weak-key";
-import { useLocation, useOutletContext } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Grid } from "@mui/material";
 import Box from "@mui/material/Box";
 
@@ -48,7 +48,7 @@ const SearchResults = (props) => {
             <Box sx={{ flexGrow: 1 }}>
               <Grid
                 container
-                spacing={{ xs: 2, md: 3 }}
+                spacing={{ xs: 2, md: 5 }}
                 columns={{ xs: 4, sm: 8, md: 12 }}
               >
                 {searchData.map((recipe, index) => (
