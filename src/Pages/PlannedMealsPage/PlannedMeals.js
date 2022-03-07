@@ -1,7 +1,7 @@
 import React from "react";
 import { useOutletContext } from "react-router-dom";
 import RecipeCardMUI from "../../components/RecipeCard/RecipeCardMUI";
-import RecipeCardBS from "../../components/RecipeCard/RecipeCardBS";
+import RecipeCardBSPlanned from "../../components/RecipeCard/RecipeCardBSPlanned";
 import key from "weak-key";
 
 const PlannedMeals = () => {
@@ -10,7 +10,7 @@ const PlannedMeals = () => {
   return (
     <div className="PlannedMeals">
       {plannedRecipes.map((e) => (
-        <RecipeCardBS
+        <RecipeCardBSPlanned
           key={key(e)}
           url={e.url}
           title={e.title}

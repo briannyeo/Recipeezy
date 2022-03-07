@@ -4,7 +4,7 @@ import { useOutletContext } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Dialog from "../DialogBox/Dialog";
 
-export default function RecipeCardBS(props) {
+export default function RecipeCardBSPlanned(props) {
   //ADD RECIPE TO PLANNEDMEALS STATE
   const [plannedRecipes, setPlannedRecipes] = useOutletContext();
 
@@ -59,9 +59,8 @@ export default function RecipeCardBS(props) {
           <Card.Body>
             <Card.Title>{props.title}</Card.Title>
             <Card.Text>text</Card.Text>
-
-            <Button variant="primary" onClick={handleAddRecipe}>
-              Add to Planned Recipes
+            <Button variant="secondary" onClick={handleRemoveRecipe}>
+              Remove from Planned Recipes
             </Button>
           </Card.Body>
         </Card>
