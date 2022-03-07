@@ -6,12 +6,10 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useOutletContext } from "react-router-dom";
-import ScrollDialog from "../../Pages/RecipeDetailsPage/RecipeDetails";
 
 export default function RecipeCardMUI(props) {
   //console.log(window.localStorage.getItem("a"));

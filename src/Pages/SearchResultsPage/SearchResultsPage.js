@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
-import RecipeCardMUI from "../../components/RecipeCard/RecipeCardMUI";
-import RecipeCardBS from "../../components/RecipeCard/RecipeCardBS";
+import RecipeCardBSAdd from "../../components/RecipeCard/RecipeCardBSAdd";
 import { Col, Row } from "react-bootstrap";
 import SearchBarBS from "../../components/SearchBar/SearchBarBS";
-import SearchBar from "../../components/SearchBar/SearchBar";
 import axios from "axios";
 import "./SearchResultsPage.css";
 import key from "weak-key";
 import { useLocation } from "react-router-dom";
-import { Grid } from "@mui/material";
-import Box from "@mui/material/Box";
 
 const SearchResults = (props) => {
   const [searchData, setSearchData] = useState();
@@ -51,7 +47,7 @@ const SearchResults = (props) => {
             <>
               {searchData.map((recipe, index) => (
                 <Col key={index}>
-                  <RecipeCardBS
+                  <RecipeCardBSAdd
                     // searchdata={searchData}
                     key={key(recipe)}
                     id={key(recipe)}
@@ -66,8 +62,6 @@ const SearchResults = (props) => {
                     calories={recipe.recipe.totalNutrients.ENERC_KCAL.quantity}
                     ingredientLines={recipe.recipe.ingredientLines}
                     instructions={recipe.recipe.url}
-                    // handleAdd={handleAdd}
-                    // handleRemove={handleRemove}
                   />
                 </Col>
               ))}

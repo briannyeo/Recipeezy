@@ -4,13 +4,14 @@ import { useOutletContext } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Dialog from "../DialogBox/Dialog";
 
-export default function RecipeCardBSPlanned(props) {
+export default function RecipeCardBSAdd(props) {
   //ADD RECIPE TO PLANNEDMEALS STATE
-  //   const handleAdd = (item) => {
-  //     setPlannedRecipes([...plannedRecipes, item]);
-  //     console.log(plannedRecipes);
-  //   };
   const [plannedRecipes, setPlannedRecipes] = useOutletContext();
+
+  const handleAdd = (item) => {
+    setPlannedRecipes([...plannedRecipes, item]);
+    //console.log(plannedRecipes);
+  };
   const handleRemove = (item) => {
     console.log("item: ", item);
     const filteredRecipes = plannedRecipes.filter((e) => {
@@ -19,29 +20,29 @@ export default function RecipeCardBSPlanned(props) {
     });
 
     setPlannedRecipes(filteredRecipes);
-    console.log(plannedRecipes);
+    //console.log(plannedRecipes);
   };
 
-  //   const handleAddRecipe = () => {
-  //     handleAdd({
-  //       id: props.id,
-  //       title: props.title,
-  //       url: props.url,
-  //       ingredients: props.ingredients,
-  //       quantity: props.quantity,
-  //       measure: props.measure,
-  //       protein: props.protein,
-  //       fats: props.fats,
-  //       carbs: props.carbs,
-  //       calories: props.calories,
-  //       ingredientLines: props.ingredientLines,
-  //       instructions: props.instructions,
-  //     });
-  //   };
-
-  const handleRemoveRecipe = () => {
-    handleRemove(props.id);
+  const handleAddRecipe = () => {
+    handleAdd({
+      id: props.id,
+      title: props.title,
+      url: props.url,
+      ingredients: props.ingredients,
+      quantity: props.quantity,
+      measure: props.measure,
+      protein: props.protein,
+      fats: props.fats,
+      carbs: props.carbs,
+      calories: props.calories,
+      ingredientLines: props.ingredientLines,
+      instructions: props.instructions,
+    });
   };
+
+  // const handleRemoveRecipe = () => {
+  //   handleRemove(props.id);
+  // };
 
   //HANDLE DIALOG BOX
   const [modalShow, setModalShow] = React.useState(false);
@@ -58,8 +59,9 @@ export default function RecipeCardBSPlanned(props) {
           <Card.Body>
             <Card.Title>{props.title}</Card.Title>
             <Card.Text>text</Card.Text>
-            <Button variant="secondary" onClick={handleRemoveRecipe}>
-              Remove from Planned Recipes
+
+            <Button variant="primary" onClick={handleAddRecipe}>
+              Add to Planned Recipes
             </Button>
           </Card.Body>
         </Card>
@@ -77,7 +79,7 @@ export default function RecipeCardBSPlanned(props) {
         carbs={props.carbs}
         ingredientlines={props.ingredientLines}
         img={props.img}
-        // handleaddrecipe={handleAddRecipe}
+        handleaddrecipe={handleAddRecipe}
       />
     </>
   );

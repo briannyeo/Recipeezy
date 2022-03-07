@@ -10,7 +10,7 @@ import GroceryList from "./GroceryListPage/GroceryList";
 import SearchResults from "./SearchResultsPage/SearchResultsPage";
 import RecipeDetails from "./RecipeDetailsPage/RecipeDetails";
 import NoMatch from "./NoMatchPage";
-import SearchBar from "../components/SearchBar/SearchBar";
+
 import SearchBarBS from "../components/SearchBar/SearchBarBS";
 
 function Main() {
