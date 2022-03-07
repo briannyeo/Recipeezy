@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import RecipeCardMUI from "../../components/RecipeCard/RecipeCardMUI";
-import SearchBar from "../../components/SearchBar/SearchBar";
+import SearchBarBS from "../../components/SearchBar/SearchBarBS";
 import axios from "axios";
 import "./SearchResultsPage.css";
 import key from "weak-key";
@@ -40,7 +40,7 @@ const SearchResults = (props) => {
 
   return (
     <div>
-      <SearchBar />
+      <SearchBarBS />
 
       <>
         {searchData ? (

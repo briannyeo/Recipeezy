@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import "./Main.css";
 
 import Home from "./HomePage/Home";
 import About from "./AboutPage/About";
@@ -10,13 +11,14 @@ import SearchResults from "./SearchResultsPage/SearchResultsPage";
 import RecipeDetails from "./RecipeDetailsPage/RecipeDetails";
 import NoMatch from "./NoMatchPage";
 import SearchBar from "../components/SearchBar/SearchBar";
+import SearchBarBS from "../components/SearchBar/SearchBarBS";
 
 function Main() {
   return (
-    <main>
+    <main className="main">
       <Routes>
         <Route path="Recipeezy" element={<Home />}>
-          <Route index element={<SearchBar />} />
+          <Route index element={<SearchBarBS />} />
           <Route path="grocerylist" element={<GroceryList />} />
           <Route path="plannedmeals" element={<PlannedMeals />} />
           <Route path="about" element={<About />} />
