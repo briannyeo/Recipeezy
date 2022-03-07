@@ -80,7 +80,7 @@ export default function RecipeCardMUI(props) {
 
   return (
     <>
-      <Card sx={{ maxWidth: 250 }}>
+      <Card sx={{ maxWidth: 300 }}>
         {props.title ? (
           <>
             <CardMedia
@@ -125,6 +125,10 @@ export default function RecipeCardMUI(props) {
         <DialogTitle id="scroll-dialog-title">{props.title}</DialogTitle>
         <DialogContent dividers={scroll === "paper"}>
           <img src={props.url}></img>
+          Calories: {props.calories}
+          Protein:{props.protein}
+          Fats:{props.fats}
+          Carbs:{props.carbs}
           <DialogContentText
             id="scroll-dialog-description"
             ref={descriptionElementRef}
