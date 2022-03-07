@@ -21,7 +21,7 @@ export default function RecipeCardMUI(props) {
 
   const handleAdd = (item) => {
     setPlannedRecipes([...plannedRecipes, item]);
-    //console.log(plannedRecipes);
+    console.log(plannedRecipes);
   };
   const handleRemove = (item) => {
     console.log("item: ", item);

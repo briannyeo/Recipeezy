@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import RecipeCardMUI from "../../components/RecipeCard/RecipeCardMUI";
 import SearchBarBS from "../../components/SearchBar/SearchBarBS";
+import SearchBar from "../../components/SearchBar/SearchBar";
 import axios from "axios";
 import "./SearchResultsPage.css";
 import key from "weak-key";

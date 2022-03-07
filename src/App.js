@@ -8,8 +8,8 @@ import Main from "./Pages/Main";
 function App() {
   return (
     <div className="app">
-      {/* <NavBar /> */}
-      <NavbarBootstrap />
+      <NavBar />
+      {/* <NavbarBootstrap /> */}
       <Main />
     </div>
   );
