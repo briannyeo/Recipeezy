@@ -1,8 +1,8 @@
 import { Card, Button } from "react-bootstrap";
 import React from "react";
 import { useOutletContext } from "react-router-dom";
-
 import "bootstrap/dist/css/bootstrap.min.css";
+import Dialog from "../DialogBox/Dialog";
 
 export default function RecipeCardBS(props) {
   //ADD RECIPE TO PLANNEDMEALS STATE
@@ -45,32 +45,17 @@ export default function RecipeCardBS(props) {
   };
 
   //HANDLE DIALOG BOX
-  const [open, setOpen] = React.useState(false);
-  const [scroll, setScroll] = React.useState("paper");
+  const [modalShow, setModalShow] = React.useState(false);
 
-  const handleClickOpen = (scrollType) => () => {
-    setOpen(true);
-    setScroll(scrollType);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const descriptionElementRef = React.useRef(null);
-  React.useEffect(() => {
-    if (open) {
-      const { current: descriptionElement } = descriptionElementRef;
-      if (descriptionElement !== null) {
-        descriptionElement.focus();
-      }
-    }
-  }, [open]);
   return (
     <>
       {props.title ? (
         <Card border="light" style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={props.url} />
+          <Card.Img
+            onClick={() => setModalShow(true)}
+            variant="top"
+            src={props.url}
+          />
           <Card.Body>
             <Card.Title>{props.title}</Card.Title>
             <Card.Text>text</Card.Text>
@@ -85,6 +70,20 @@ export default function RecipeCardBS(props) {
       ) : (
         <div></div>
       )}
+      <Dialog
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        title={props.title}
+        instructions={props.instructions}
+        calories={props.calories}
+        protein={props.protein}
+        fats={props.fats}
+        carbs={props.carbs}
+        ingredientlines={props.ingredientLines}
+        instructions={props.instructions}
+        img={props.img}
+        handleaddrecipe={handleAddRecipe}
+      />
     </>
   );
 }

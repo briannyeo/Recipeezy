@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import RecipeCardMUI from "../../components/RecipeCard/RecipeCardMUI";
 import RecipeCardBS from "../../components/RecipeCard/RecipeCardBS";
+import { Col, Row } from "react-bootstrap";
 import SearchBarBS from "../../components/SearchBar/SearchBarBS";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import axios from "axios";
@@ -45,45 +46,39 @@ const SearchResults = (props) => {
       <SearchBarBS />
 
       <>
-        {searchData ? (
-          <>
-            {searchData.map((recipe, index) => (
-              <RecipeCardBS
-                // searchdata={searchData}
-                key={key(recipe)}
-                id={key(recipe)}
-                url={recipe.recipe.images.REGULAR.url}
-                title={recipe.recipe.label}
-                ingredients={recipe.recipe.ingredients.map((e) => e.food)}
-                quantity={recipe.recipe.ingredients.map((e) => e.quantity)}
-                measure={recipe.recipe.ingredients.map((e) => e.measure)}
-                protein={recipe.recipe.totalNutrients.PROCNT.quantity}
-                fats={recipe.recipe.totalNutrients.FAT.quantity}
-                carbs={recipe.recipe.totalNutrients.CHOCDF.quantity}
-                calories={recipe.recipe.totalNutrients.ENERC_KCAL.quantity}
-                ingredientLines={recipe.recipe.ingredientLines}
-                instructions={recipe.recipe.url}
-                // handleAdd={handleAdd}
-                // handleRemove={handleRemove}
-              />
-            ))}
-          </>
-        ) : (
-          <div></div>
-        )}
+        <Row xs={1} md={3} lg={4} className="g-4">
+          {searchData ? (
+            <>
+              {searchData.map((recipe, index) => (
+                <Col key={index}>
+                  <RecipeCardBS
+                    // searchdata={searchData}
+                    key={key(recipe)}
+                    id={key(recipe)}
+                    url={recipe.recipe.images.REGULAR.url}
+                    title={recipe.recipe.label}
+                    ingredients={recipe.recipe.ingredients.map((e) => e.food)}
+                    quantity={recipe.recipe.ingredients.map((e) => e.quantity)}
+                    measure={recipe.recipe.ingredients.map((e) => e.measure)}
+                    protein={recipe.recipe.totalNutrients.PROCNT.quantity}
+                    fats={recipe.recipe.totalNutrients.FAT.quantity}
+                    carbs={recipe.recipe.totalNutrients.CHOCDF.quantity}
+                    calories={recipe.recipe.totalNutrients.ENERC_KCAL.quantity}
+                    ingredientLines={recipe.recipe.ingredientLines}
+                    instructions={recipe.recipe.url}
+                    // handleAdd={handleAdd}
+                    // handleRemove={handleRemove}
+                  />
+                </Col>
+              ))}
+            </>
+          ) : (
+            <div></div>
+          )}
+        </Row>
       </>
     </div>
   );
 };
 
 export default SearchResults;
-
-// url: res.data.hits[0].recipe.images.REGULAR.url,
-// title: res.data.hits[0].recipe.label,
-// ingredients: res.data.hits[0].recipe.ingredients.map((e) => e.food),
-// quantity: res.data.hits[0].recipe.ingredients.map((e) => e.quantity),
-// measure: res.data.hits[0].recipe.ingredients.map((e) => e.measure),
-// protein: res.data.hits[0].recipe.totalNutrients.PROCNT.quantity,
-// fats: res.data.hits[0].recipe.totalNutrients.FAT.quantity,
-// carbs: res.data.hits[0].recipe.totalNutrients.CHOCDF.quantity,
-// calories: res.data.hits[0].recipe.totalNutrients.ENERC_KCAL.quantity,
