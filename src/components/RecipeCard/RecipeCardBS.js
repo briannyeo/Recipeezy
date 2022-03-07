@@ -10,7 +10,7 @@ export default function RecipeCardBS(props) {
 
   const handleAdd = (item) => {
     setPlannedRecipes([...plannedRecipes, item]);
-    console.log(plannedRecipes);
+    //console.log(plannedRecipes);
   };
   const handleRemove = (item) => {
     console.log("item: ", item);
@@ -78,7 +78,6 @@ export default function RecipeCardBS(props) {
         fats={props.fats}
         carbs={props.carbs}
         ingredientlines={props.ingredientLines}
-        instructions={props.instructions}
         img={props.img}
         handleaddrecipe={handleAddRecipe}
       />

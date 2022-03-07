@@ -46,7 +46,7 @@ const SearchResults = (props) => {
       <SearchBarBS />
 
       <>
-        <Row xs={1} md={3} lg={4} className="g-4">
+        <Row xs={1} md={3} lg={4} className="g-3">
           {searchData ? (
             <>
               {searchData.map((recipe, index) => (

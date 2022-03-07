@@ -6,12 +6,11 @@ import Dialog from "../DialogBox/Dialog";
 
 export default function RecipeCardBSPlanned(props) {
   //ADD RECIPE TO PLANNEDMEALS STATE
+  //   const handleAdd = (item) => {
+  //     setPlannedRecipes([...plannedRecipes, item]);
+  //     console.log(plannedRecipes);
+  //   };
   const [plannedRecipes, setPlannedRecipes] = useOutletContext();
-
-  const handleAdd = (item) => {
-    setPlannedRecipes([...plannedRecipes, item]);
-    console.log(plannedRecipes);
-  };
   const handleRemove = (item) => {
     console.log("item: ", item);
     const filteredRecipes = plannedRecipes.filter((e) => {
@@ -20,25 +19,25 @@ export default function RecipeCardBSPlanned(props) {
     });
 
     setPlannedRecipes(filteredRecipes);
-    //console.log(plannedRecipes);
+    console.log(plannedRecipes);
   };
 
-  const handleAddRecipe = () => {
-    handleAdd({
-      id: props.id,
-      title: props.title,
-      url: props.url,
-      ingredients: props.ingredients,
-      quantity: props.quantity,
-      measure: props.measure,
-      protein: props.protein,
-      fats: props.fats,
-      carbs: props.carbs,
-      calories: props.calories,
-      ingredientLines: props.ingredientLines,
-      instructions: props.instructions,
-    });
-  };
+  //   const handleAddRecipe = () => {
+  //     handleAdd({
+  //       id: props.id,
+  //       title: props.title,
+  //       url: props.url,
+  //       ingredients: props.ingredients,
+  //       quantity: props.quantity,
+  //       measure: props.measure,
+  //       protein: props.protein,
+  //       fats: props.fats,
+  //       carbs: props.carbs,
+  //       calories: props.calories,
+  //       ingredientLines: props.ingredientLines,
+  //       instructions: props.instructions,
+  //     });
+  //   };
 
   const handleRemoveRecipe = () => {
     handleRemove(props.id);
@@ -77,9 +76,8 @@ export default function RecipeCardBSPlanned(props) {
         fats={props.fats}
         carbs={props.carbs}
         ingredientlines={props.ingredientLines}
-        instructions={props.instructions}
         img={props.img}
-        handleaddrecipe={handleAddRecipe}
+        // handleaddrecipe={handleAddRecipe}
       />
     </>
   );

@@ -2,6 +2,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Modal, Button } from "react-bootstrap";
 
 export default function Dialog(props) {
+  //   console.log(props.calories);
+  //   console.log(props.ingredientlines);
   return (
     <Modal
       {...props}
