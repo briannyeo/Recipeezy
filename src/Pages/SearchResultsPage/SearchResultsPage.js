@@ -40,8 +40,11 @@ const SearchResults = (props) => {
   return (
     <div>
       <SearchBarBS />
-
-      <>
+      <div
+        className="altbackground"
+        style={{ backgroundColor: "white", opacity: "80%", height: "100vh" }}
+      ></div>
+      <div className="cardRow" style={{ position: "relative", top: "5px" }}>
         <Row xs={1} md={3} lg={4} className="g-3">
           {searchData ? (
             <>
@@ -70,7 +73,7 @@ const SearchResults = (props) => {
             <div></div>
           )}
         </Row>
-      </>
+      </div>
     </div>
   );
 };
