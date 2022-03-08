@@ -1,21 +1,26 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "./Main.css";
-
 import Home from "./HomePage/Home";
 import About from "./AboutPage/About";
-
 import PlannedMeals from "./PlannedMealsPage/PlannedMeals";
 import GroceryList from "./GroceryListPage/GroceryList";
 import SearchResults from "./SearchResultsPage/SearchResultsPage";
 import RecipeDetails from "./RecipeDetailsPage/RecipeDetails";
 import NoMatch from "./NoMatchPage";
-
 import SearchBarBS from "../components/SearchBar/SearchBarBS";
+import background from "../images/recipeezyhomepage.jpeg";
 
 function Main() {
   return (
-    <main className="main">
+    <main
+      className="main"
+      style={{
+        backgroundSize: "cover",
+        backgroundPosition: "center center",
+        backgroundImage: `url(${background})`,
+      }}
+    >
       <Routes>
         <Route path="Recipeezy" element={<Home />}>
           <Route index element={<SearchBarBS />} />
