@@ -1,0 +1,20 @@
+.about {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  background-color: #e7e7e7;
+  width: 80%;
+  place-items: center;
+}
+
+.aboutHeader {
+  grid-area: 2 / 1 / 5 / 4;
+}
+.aboutDetails {
+  grid-area: 1 / 4 / 3 / 6;
+}
+.recipeezyDetails {
+  grid-area: 3 / 4 / 6 / 6;
+}
