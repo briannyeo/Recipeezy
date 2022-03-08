@@ -7,6 +7,7 @@ import key from "weak-key";
 
 const PlannedMeals = () => {
   const [plannedRecipes, setPlannedRecipes] = useOutletContext();
+  console.log(plannedRecipes);
 
   return (
     <div className="PlannedMeals">

@@ -1,0 +1,10 @@
+.recipe-container {
+  display: grid;
+  grid-template-columns: 1fr, 1fr, 1fr;
+}
+
+.altbackground {
+  background-color: "white";
+  opacity: "80%";
+  height: "100vh";
+}

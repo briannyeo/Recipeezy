@@ -18,7 +18,8 @@ function Main() {
       style={{
         backgroundSize: "cover",
         backgroundPosition: "center center",
-        backgroundImage: `url(${background})`,
+        background: `url(${background})`,
+        backgroundAttachment: "fixed",
       }}
     >
       <Routes>

@@ -22,21 +22,23 @@ const SearchBarBS = (props) => {
   };
 
   return (
-    <Form className="d-flex">
-      <FormControl
-        onChange={(e) => {
-          setSearchWord(e.target.value);
-        }}
-        type="search"
-        placeholder="Search"
-        className="me-2"
-        aria-label="Search"
-        onKeyDown={handleKeypress}
-      />
-      <Button onClick={handleSubmit} variant="outline-success">
-        <img className="searchiconimg" src={searchIcon} alt="search" />
-      </Button>
-    </Form>
+    <div style={{ width: "75%", margin: "0 auto" }}>
+      <Form className="d-flex">
+        <FormControl
+          onChange={(e) => {
+            setSearchWord(e.target.value);
+          }}
+          type="search"
+          placeholder="Search"
+          className="me-2"
+          aria-label="Search"
+          onKeyDown={handleKeypress}
+        />
+        <Button onClick={handleSubmit} variant="outline-success">
+          <img className="searchiconimg" src={searchIcon} alt="search" />
+        </Button>
+      </Form>
+    </div>
   );
 };
 

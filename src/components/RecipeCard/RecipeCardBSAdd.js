@@ -3,6 +3,7 @@ import React from "react";
 import { useOutletContext } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Dialog from "../DialogBox/Dialog";
+import "./RecipeCardBSAdd.css";
 
 export default function RecipeCardBSAdd(props) {
   //ADD RECIPE TO PLANNEDMEALS STATE
@@ -50,15 +51,15 @@ export default function RecipeCardBSAdd(props) {
   return (
     <>
       {props.title ? (
-        <Card border="light" style={{ width: "18rem" }}>
+        <Card className="recipeCard" border="light" style={{ width: "18rem" }}>
           <Card.Img
+            className="cardImage"
             onClick={() => setModalShow(true)}
             variant="top"
             src={props.url}
           />
           <Card.Body>
-            <Card.Title>{props.title}</Card.Title>
-            <Card.Text>text</Card.Text>
+            <Card.Title className="cardTitle">{props.title}</Card.Title>
 
             <Button variant="primary" onClick={handleAddRecipe}>
               Add to Planned Recipes

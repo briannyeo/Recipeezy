@@ -1,0 +1,15 @@
+.recipeCard {
+  background-color: blue;
+  box-shadow: 2px 4px #888888;
+  display: flex;
+}
+
+.cardImage {
+  width: 15rem;
+  display: flex;
+  justify-content: center;
+}
+
+.cardTitle {
+  width: fit-content;
+}
