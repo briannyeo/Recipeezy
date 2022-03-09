@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 
 const Home = () => {
   const [plannedRecipes, setPlannedRecipes] = useState([]);
+
   return <Outlet context={[plannedRecipes, setPlannedRecipes]} />;
 };
 

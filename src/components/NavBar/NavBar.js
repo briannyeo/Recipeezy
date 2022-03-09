@@ -2,9 +2,9 @@ import { Navbar, Nav, Container, NavLink } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import chefHat from "../../images/chef.png";
 import { Outlet, Link } from "react-router-dom";
-import "./NavbarBootstrap.css";
+import "./NavBar.css";
 
-export default function NavbarBootstrap() {
+export default function NavBar() {
   return (
     <Navbar sticky="top" fixed="top" bg="light" expand="md">
       <Container fluid>
