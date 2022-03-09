@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import RecipeCardBSAdd from "../../components/RecipeCard/RecipeCardBSAdd";
 import { Col, Row } from "react-bootstrap";
 import SearchBarBS from "../../components/SearchBar/SearchBarBS";
@@ -7,9 +7,11 @@ import axios from "axios";
 import styles from "./SearchResultsPage.module.css";
 import key from "weak-key";
 import { useLocation } from "react-router-dom";
+import { BackgroundStylesContext } from '../../contexts/BackgroundStylesContext';
 
 const SearchResults = (props) => {
   const [searchData, setSearchData] = useState();
+  const { backgroundStyles, setBackgroundStyles } = useContext(BackgroundStylesContext);
 
   //TO GET PARAMS FROM URL
   const location = useLocation(); // to check if url is updated
@@ -32,11 +34,17 @@ const SearchResults = (props) => {
       )
       .then((res) => {
         setSearchData(res.data.hits);
+        if (backgroundStyles?.opacity !== '50%') {
+          setBackgroundStyles({
+            ...backgroundStyles,
+            opacity: '50%',
+          });
+        }
       })
       .catch((err) => {
         console.log(err);
       });
-  }, [location]);
+  }, [location, backgroundStyles, setBackgroundStyles, q]);
   console.log(styles.altbackground);
   return (
     <div>
