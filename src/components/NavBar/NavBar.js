@@ -8,7 +8,7 @@ import SearchBarBS from "../SearchBar/SearchBarBS";
 
 export default function NavBar() {
   return (
-    <Navbar sticky="top" fixed="top" bg="li" expand="md">
+    <Navbar className="navbar" sticky="top" fixed="top" bg="li" expand="md">
       <Container fluid>
         <Link to="/Recipeezy">
           <Navbar.Brand className="brand">

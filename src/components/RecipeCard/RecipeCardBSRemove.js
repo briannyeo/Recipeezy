@@ -40,10 +40,10 @@ export default function RecipeCardBSREMOVED(props) {
 
             <Button
               className="cardbutton"
-              variant="primary"
+              variant="danger"
               onClick={handleRemoveRecipe}
             >
-              Add to Planned Recipes
+              Remove
             </Button>
           </Card.Body>
         </Card>

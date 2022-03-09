@@ -52,8 +52,8 @@ const SearchResults = (props) => {
     <div>
       {/* <SearchBarBS /> */}
       <div className="altbackground">
-        <div className="cardrow" style={{ position: "relative" }}>
-          <Row xs={1} md={3} lg={4} className="g-3">
+        <div className="cardrow">
+          <Row xs={1} md={3} xl={4} className="justify-content-md-center">
             {searchData ? (
               <>
                 {searchData.map((recipe, index) => (

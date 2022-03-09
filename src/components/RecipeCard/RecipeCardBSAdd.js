@@ -51,7 +51,11 @@ export default function RecipeCardBSAdd(props) {
   return (
     <>
       {props.title ? (
-        <Card className="recipecard" border="light" style={{ width: "18rem" }}>
+        <Card
+          className="recipecard"
+          border="light"
+          style={{ width: "18rem", margin: "20px" }}
+        >
           <Card.Img
             className="cardimage"
             onClick={() => setModalShow(true)}
@@ -63,10 +67,10 @@ export default function RecipeCardBSAdd(props) {
 
             <Button
               className="cardbutton"
-              variant="primary"
+              variant="success"
               onClick={handleAddRecipe}
             >
-              Add to Planned Recipes
+              Add
             </Button>
           </Card.Body>
         </Card>
