@@ -51,17 +51,21 @@ export default function RecipeCardBSAdd(props) {
   return (
     <>
       {props.title ? (
-        <Card className="recipeCard" border="light" style={{ width: "18rem" }}>
+        <Card className="recipecard" border="light" style={{ width: "18rem" }}>
           <Card.Img
-            className="cardImage"
+            className="cardimage"
             onClick={() => setModalShow(true)}
             variant="top"
             src={props.url}
           />
           <Card.Body>
-            <Card.Title className="cardTitle">{props.title}</Card.Title>
+            <Card.Title className="cardtitle">{props.title}</Card.Title>
 
-            <Button variant="primary" onClick={handleAddRecipe}>
+            <Button
+              className="cardbutton"
+              variant="primary"
+              onClick={handleAddRecipe}
+            >
               Add to Planned Recipes
             </Button>
           </Card.Body>

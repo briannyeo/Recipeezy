@@ -1,20 +1,26 @@
-.about {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  background-color: #e7e7e7;
-  width: 80%;
-  place-items: center;
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300&family=Patua+One&display=swap");
+
+.container {
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #ffff00;
+  padding: 10px;
 }
 
-.aboutHeader {
-  grid-area: 2 / 1 / 5 / 4;
+/*.logo {
+  height: 2em;
+} */
+/* .about-header {
+  font-family: "Lobster", cursive;
+  font-size: 4em;
+} */
+.about-details {
+  font-size: 30px;
+  font-family: "Open Sans", sans-serif;
+  margin: 20px;
 }
-.aboutDetails {
-  grid-area: 1 / 4 / 3 / 6;
-}
-.recipeezyDetails {
-  grid-area: 3 / 4 / 6 / 6;
+.about-instructions {
 }

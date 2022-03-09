@@ -1,23 +1,24 @@
 import React from "react";
 import "./About.css";
+import Recipeezy from "../../images/Recipeezy.png";
 
 const About = () => {
   return (
-    <div className="about">
-      <div className="aboutHeader">Recipeezy</div>
-      <div className="aboutDetails">
-        <ul>
+    <div className="container">
+      {/* <div className="about-header">
+        <img className="logo" src={Recipeezy}></img>
+      </div> */}
+
+      <div className="about-details">
+        <div className="about-context">
           {" "}
-          <li>
-            Ever walked around aimlessly in a supermarket not knowing what
-            ingredients to buy?
-          </li>{" "}
-          <li>
-            Or how about simply needing that touch of inspiration when answering
-            the age-old question "What should I cook today?"
-          </li>{" "}
-        </ul>
-        <div className="recipeezyDetails">
+          Ever walked around aimlessly in a supermarket not knowing what
+          ingredients to buy? Or how about simply needing that touch of
+          inspiration when answering the age-old question "What should I cook
+          today? "
+        </div>
+
+        <div className="about-instructions">
           How Recipeezy works:
           <ol>
             <li>

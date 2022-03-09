@@ -1,17 +1,22 @@
 import { Navbar, Nav, Container, NavLink } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import chefHat from "../../images/chef.png";
+import Recipeezy from "../../images/Recipeezy.png";
 import { Outlet, Link } from "react-router-dom";
 import "./NavBar.css";
+import SearchBarBS from "../SearchBar/SearchBarBS";
 
 export default function NavBar() {
   return (
-    <Navbar sticky="top" fixed="top" bg="light" expand="md">
+    <Navbar sticky="top" fixed="top" bg="li" expand="md">
       <Container fluid>
         <Link to="/Recipeezy">
           <Navbar.Brand className="brand">
-            <img className="navbarimg" src={chefHat} alt="chefhat" />
-            Recipeezy
+            <img src={Recipeezy} alt="chefhat" style={{ height: "3em" }} />
+            {/* <img className="navbarimg" src={chefHat} alt="chefhat" />
+            <div style={{ fontFamily: "Lobster", fontSize: "1.6em" }}>
+              Recipeezy
+            </div> */}
           </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -30,6 +35,7 @@ export default function NavBar() {
             </div>
           </Nav>
         </Navbar.Collapse>
+        <SearchBarBS />
       </Container>
     </Navbar>
   );

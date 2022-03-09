@@ -1,14 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300&family=Patua+One&display=swap");
 .brand {
   height: 3em;
 }
+
 .navbarimg {
   height: 2.5em;
 }
 
 span {
-  display: inline-block;
   margin: 1em;
   color: rgb(72, 71, 71);
+  display: inline-block;
 }
 
 span:hover {

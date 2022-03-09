@@ -3,6 +3,7 @@ import React from "react";
 import { useOutletContext } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Dialog from "../DialogBox/Dialog";
+import "./RecipeCardBSRemove.css";
 
 export default function RecipeCardBSREMOVED(props) {
   const [plannedRecipes, setPlannedRecipes] = useOutletContext();
@@ -27,17 +28,22 @@ export default function RecipeCardBSREMOVED(props) {
   return (
     <>
       {props.title ? (
-        <Card border="light" style={{ width: "18rem" }}>
+        <Card className="recipecard" border="light" style={{ width: "18rem" }}>
           <Card.Img
+            className="cardimage"
             onClick={() => setModalShow(true)}
             variant="top"
             src={props.url}
           />
           <Card.Body>
-            <Card.Title>{props.title}</Card.Title>
-            <Card.Text>text</Card.Text>
-            <Button variant="secondary" onClick={handleRemoveRecipe}>
-              Remove from Planned Recipes
+            <Card.Title className="cardtitle">{props.title}</Card.Title>
+
+            <Button
+              className="cardbutton"
+              variant="primary"
+              onClick={handleRemoveRecipe}
+            >
+              Add to Planned Recipes
             </Button>
           </Card.Body>
         </Card>

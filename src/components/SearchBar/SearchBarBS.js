@@ -22,7 +22,7 @@ const SearchBarBS = (props) => {
   };
 
   return (
-    <div style={{ width: "75%", margin: "0 auto" }}>
+    <div style={{ width: "35%", margin: "0 auto" }}>
       <Form className="d-flex">
         <FormControl
           onChange={(e) => {
@@ -34,7 +34,7 @@ const SearchBarBS = (props) => {
           aria-label="Search"
           onKeyDown={handleKeypress}
         />
-        <Button onClick={handleSubmit} variant="outline-success">
+        <Button className="searchbutton" onClick={handleSubmit}>
           <img className="searchiconimg" src={searchIcon} alt="search" />
         </Button>
       </Form>

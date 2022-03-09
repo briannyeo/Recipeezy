@@ -32,7 +32,7 @@ function Main() {
         <div style={{ ...backgroundStyles }} />
         <Routes>
           <Route path="Recipeezy" element={<Home />}>
-            <Route index element={<SearchBarBS />} />
+            {/* <Route index element={<SearchBarBS />} /> */}
             <Route path="grocerylist" element={<GroceryList />} />
             <Route path="plannedmeals" element={<PlannedMeals />} />
             <Route path="about" element={<About />} />

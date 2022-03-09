@@ -4,14 +4,16 @@ import { Col, Row } from "react-bootstrap";
 import SearchBarBS from "../../components/SearchBar/SearchBarBS";
 import axios from "axios";
 // import "./SearchResultsPage.css";
-import styles from "./SearchResultsPage.module.css";
+import "./SearchResultsPage.css";
 import key from "weak-key";
 import { useLocation } from "react-router-dom";
-import { BackgroundStylesContext } from '../../contexts/BackgroundStylesContext';
+import { BackgroundStylesContext } from "../../contexts/BackgroundStylesContext";
 
 const SearchResults = (props) => {
   const [searchData, setSearchData] = useState();
-  const { backgroundStyles, setBackgroundStyles } = useContext(BackgroundStylesContext);
+  const { backgroundStyles, setBackgroundStyles } = useContext(
+    BackgroundStylesContext
+  );
 
   //TO GET PARAMS FROM URL
   const location = useLocation(); // to check if url is updated
@@ -34,10 +36,10 @@ const SearchResults = (props) => {
       )
       .then((res) => {
         setSearchData(res.data.hits);
-        if (backgroundStyles?.opacity !== '50%') {
+        if (backgroundStyles?.opacity !== "50%") {
           setBackgroundStyles({
             ...backgroundStyles,
-            opacity: '50%',
+            opacity: "50%",
           });
         }
       })
@@ -45,12 +47,12 @@ const SearchResults = (props) => {
         console.log(err);
       });
   }, [location, backgroundStyles, setBackgroundStyles, q]);
-  console.log(styles.altbackground);
+  //console.log(styles.altbackground);
   return (
     <div>
-      <SearchBarBS />
+      {/* <SearchBarBS /> */}
       <div className="altbackground">
-        <div className="cardRow" style={{ position: "relative", top: "5px" }}>
+        <div className="cardrow" style={{ position: "relative" }}>
           <Row xs={1} md={3} lg={4} className="g-3">
             {searchData ? (
               <>
