@@ -1,25 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300&family=Patua+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=BioRhyme:wght@300&family=Bitter:wght@300&family=Raleway:wght@800&display=swap");
 
+* {
+  font-family: "Bitter", serif;
+}
 .container {
   background-color: white;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  border: 5px solid #ffff00;
+  border: 5px solid #906bba;
   padding: 10px;
+  font-family: "Bitter", serif;
 }
 
-/*.logo {
-  height: 2em;
-} */
-/* .about-header {
-  font-family: "Lobster", cursive;
-  font-size: 4em;
-} */
 .about-details {
   font-size: 30px;
-  font-family: "Open Sans", sans-serif;
+
   margin: 20px;
 }
 .about-instructions {

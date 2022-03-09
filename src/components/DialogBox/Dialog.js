@@ -10,7 +10,7 @@ export default function Dialog(props) {
     return decStr.split(".")[0];
   };
 
-  console.log(props.calories);
+  //console.log(props.calories);
   return (
     <Modal
       {...props}

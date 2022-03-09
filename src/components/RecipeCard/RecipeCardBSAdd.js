@@ -65,11 +65,7 @@ export default function RecipeCardBSAdd(props) {
           <Card.Body>
             <Card.Title className="cardtitle">{props.title}</Card.Title>
 
-            <Button
-              className="cardbutton"
-              variant="success"
-              onClick={handleAddRecipe}
-            >
+            <Button className="addbutton" onClick={handleAddRecipe}>
               Add
             </Button>
           </Card.Body>

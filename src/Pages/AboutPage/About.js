@@ -18,7 +18,10 @@ const About = () => {
           today? "
         </div>
 
-        <div className="about-instructions">
+        <div
+          className="about-instructions"
+          style={{ fontFamily: "Bitter, serif" }}
+        >
           How Recipeezy works:
           <ol>
             <li>

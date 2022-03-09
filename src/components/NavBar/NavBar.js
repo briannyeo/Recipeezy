@@ -1,7 +1,7 @@
 import { Navbar, Nav, Container, NavLink } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import chefHat from "../../images/chef.png";
-import Recipeezy from "../../images/Recipeezy.png";
+import Recipeezy from "../../images/logo2.png";
 import { Outlet, Link } from "react-router-dom";
 import "./NavBar.css";
 import SearchBarBS from "../SearchBar/SearchBarBS";
@@ -12,7 +12,7 @@ export default function NavBar() {
       <Container fluid>
         <Link to="/Recipeezy">
           <Navbar.Brand className="brand">
-            <img src={Recipeezy} alt="chefhat" style={{ height: "3em" }} />
+            <img src={Recipeezy} alt="chefhat" style={{ height: "3.5em" }} />
             {/* <img className="navbarimg" src={chefHat} alt="chefhat" />
             <div style={{ fontFamily: "Lobster", fontSize: "1.6em" }}>
               Recipeezy
@@ -24,13 +24,13 @@ export default function NavBar() {
           <Nav className="me-auto my-2 my-lg-0 ">
             <div className="navbarlinks">
               <Link to="/Recipeezy/about">
-                <span>How to Use</span>
+                <span>HOW TO USE</span>
               </Link>
               <Link to="/Recipeezy/plannedmeals">
-                <span>Planned Meals</span>
+                <span>PLANNED MEALS</span>
               </Link>
               <Link to="/Recipeezy/grocerylist">
-                <span>Grocery List</span>
+                <span>GROCERY LIST</span>
               </Link>
             </div>
           </Nav>

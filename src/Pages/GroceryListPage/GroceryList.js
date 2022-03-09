@@ -1,9 +1,10 @@
 import "./GroceryList.css";
 import { useOutletContext } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Table } from "react-bootstrap";
 
 export default function GroceryList() {
   const [plannedRecipes, setPlannedRecipes] = useOutletContext();
-  console.log(plannedRecipes);
 
   // const sortedData = {};
   // const sortData = (data) => {
@@ -17,22 +18,40 @@ export default function GroceryList() {
   //ingredient = []
 
   return (
-    <table>
-      <tr>
-        <th>Ingredients</th>
-      </tr>
-
-      {plannedRecipes.map((el) =>
-        el.ingredientLines.map((e) => (
-          <tr>
-            <td>{e} </td>
-            <td>
-              <input type="checkbox" />
-            </td>
-          </tr>
-        ))
-      )}
-    </table>
+    <Table className="tablelist" striped bordered hover size="sm">
+      <thead>
+        <tr className="tableheader">
+          <th
+            style={{ fontFamily: "Raleway, sans-serif", color: "black" }}
+            scope="col"
+          >
+            #
+          </th>
+          <th
+            style={{
+              fontFamily: "Raleway, sans-serif",
+              color: "black",
+            }}
+            scope="col"
+          >
+            INGREDIENTS
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {plannedRecipes.map((el) =>
+          el.ingredientLines.map((e, index) => (
+            <tr>
+              <th scope="row">{index + 1}</th>
+              <td>{e}</td>
+              <td>
+                <input type="checkbox" />
+              </td>
+            </tr>
+          ))
+        )}
+      </tbody>
+    </Table>
   );
 }
 

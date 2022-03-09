@@ -29,7 +29,7 @@ const SearchBarBS = (props) => {
             setSearchWord(e.target.value);
           }}
           type="search"
-          placeholder="Search"
+          placeholder="Search Ingredient"
           className="me-2"
           aria-label="Search"
           onKeyDown={handleKeypress}

@@ -20,6 +20,14 @@
   margin: 0 auto;
 }
 
-.cardbutton {
+.removebutton {
   align-items: center;
+  background-color: #906bba;
+  border-color: #906bba;
+  font-family: "Bitter", serif;
+}
+
+.removebutton:hover {
+  background-color: #c91b30;
+  border-color: #c91b30;
 }

@@ -1,18 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300&family=Patua+One&display=swap");
-.brand {
-  height: 3em;
-}
+@import url("https://fonts.googleapis.com/css2?family=BioRhyme:wght@300&family=Raleway:wght@800&display=swap");
 
-.navbarimg {
-  height: 2.5em;
+.brand {
+  height: 3.1em;
+  margin-top: -5px;
 }
 
 span {
   margin: 1em;
-  color: rgb(72, 71, 71);
+  color: #363636;
   display: inline-block;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.8em;
 }
 
 span:hover {
-  color: rgb(107, 228, 20);
+  color: #75a242;
+}
+
+.navbar {
+  background-color: white;
+  border-bottom: #b9b9b9;
 }

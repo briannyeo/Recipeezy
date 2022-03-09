@@ -4,6 +4,7 @@ import { useOutletContext } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Dialog from "../DialogBox/Dialog";
 import "./RecipeCardBSRemove.css";
+import { hover } from "@testing-library/user-event/dist/hover";
 
 export default function RecipeCardBSREMOVED(props) {
   const [plannedRecipes, setPlannedRecipes] = useOutletContext();
@@ -38,11 +39,7 @@ export default function RecipeCardBSREMOVED(props) {
           <Card.Body>
             <Card.Title className="cardtitle">{props.title}</Card.Title>
 
-            <Button
-              className="cardbutton"
-              variant="danger"
-              onClick={handleRemoveRecipe}
-            >
+            <Button className="removebutton" onClick={handleRemoveRecipe}>
               Remove
             </Button>
           </Card.Body>

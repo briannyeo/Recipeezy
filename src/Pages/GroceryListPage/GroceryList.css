@@ -1,15 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=BioRhyme:wght@300&family=Bitter:wght@700;900&family=Raleway:wght@800&display=swap");
+
+.tablelist {
+  background-color: #eef9d9;
+  width: 45%;
+  color: #82857a;
+  margin-top: 5px;
+  border: 2px solid #906bba;
+}
+
 table {
-  border: 1px solid black;
   margin: 0 auto;
 }
 
 tr {
-  border: 1px solid black;
+  border: 2px solid #906bba;
 }
 th {
-  border: 1px solid black;
+  border: 3px solid #906bba;
 }
 
 td {
-  border: 1px solid black;
+  border: 1px solid #906bba;
+}
+
+.tableheader {
+  font-family: "Raleway", sans-serif;
 }
