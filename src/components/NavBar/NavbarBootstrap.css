@@ -1,6 +1,16 @@
 .brand {
-  height: 60px;
+  height: 3em;
 }
 .navbarimg {
-  height: 50px;
+  height: 2.5em;
+}
+
+span {
+  display: inline-block;
+  margin: 1em;
+  color: rgb(72, 71, 71);
+}
+
+span:hover {
+  color: rgb(107, 228, 20);
 }

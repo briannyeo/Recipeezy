@@ -9,29 +9,27 @@ import SearchResults from "./SearchResultsPage/SearchResultsPage";
 import RecipeDetails from "./RecipeDetailsPage/RecipeDetails";
 import NoMatch from "./NoMatchPage";
 import SearchBarBS from "../components/SearchBar/SearchBarBS";
-import background from '../images/recipeezyhomepage.jpeg';
+import background from "../images/recipeezyhomepage.jpeg";
 import { BackgroundStylesContext } from "../contexts/BackgroundStylesContext";
 
 function Main() {
   const [backgroundStyles, setBackgroundStyles] = useState({
-    height: '100vh',
-    width: '100vw',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center center',
+    height: "100vh",
+    width: "100vw",
+    backgroundSize: "cover",
+    backgroundPosition: "center center",
     background: `url(${background})`,
-    backgroundAttachment: 'fixed',
+    backgroundAttachment: "fixed",
     position: "fixed",
     zIndex: -1,
   });
 
   return (
-    <main
-      className="main"
-    >
-      <BackgroundStylesContext.Provider value={{ backgroundStyles, setBackgroundStyles }} > 
-        <div
-          style={{...backgroundStyles}}
-        />
+    <main>
+      <BackgroundStylesContext.Provider
+        value={{ backgroundStyles, setBackgroundStyles }}
+      >
+        <div style={{ ...backgroundStyles }} />
         <Routes>
           <Route path="Recipeezy" element={<Home />}>
             <Route index element={<SearchBarBS />} />
