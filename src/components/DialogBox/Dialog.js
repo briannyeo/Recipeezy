@@ -1,9 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Modal, Button } from "react-bootstrap";
+import "./Dialog.css";
 
 export default function Dialog(props) {
   //   console.log(props.calories);
   //   console.log(props.ingredientlines);
+  const removeDecimal = (dec) => {
+    const decStr = dec.toString();
+    return decStr.split(".")[0];
+  };
+
+  console.log(props.calories);
   return (
     <Modal
       {...props}
@@ -19,15 +26,25 @@ export default function Dialog(props) {
       <Modal.Body>
         <h4>Macros:</h4>
         <ul>
-          <li>Calories - {props.calories} kCal</li>
-          <li>Protein - {props.protein} g</li>
-          <li>Fats - {props.fats} g</li>
-          <li>Carbs - {props.carbs} g</li>
+          <li>
+            <b>Calories</b> - {removeDecimal(props.calories)} kCal
+          </li>
+          <li>
+            <b>Protein</b> - {removeDecimal(props.protein)} g
+          </li>
+          <li>
+            <b>Fats </b>- {removeDecimal(props.fats)} g
+          </li>
+          <li>
+            <b>Carbs </b>- {removeDecimal(props.carbs)} g
+          </li>
         </ul>
         <h4>Ingredients:</h4>
         {props.ingredientlines.map((e, index) => (
           <li key={index}>{e}</li>
         ))}
+      </Modal.Body>
+      <Modal.Footer className="modal-footer">
         <h5>
           For full recipe and instructions, click{" "}
           <a
@@ -38,9 +55,6 @@ export default function Dialog(props) {
             here
           </a>
         </h5>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.handleaddrecipe}>Add Recipe</Button>
       </Modal.Footer>
     </Modal>
   );
