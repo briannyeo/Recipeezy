@@ -6,11 +6,13 @@ import { Form, FormControl, Button } from "react-bootstrap";
 
 const SearchBarBS = (props) => {
   const [searchWord, setSearchWord] = useState("");
+  const [searchValue, setSearchValue] = useState("");
 
   const navigate = useNavigate();
 
   const handleSubmit = () => {
     navigate(`/Recipeezy/results?search=${searchWord}`);
+    setSearchWord("");
   };
 
   const handleKeypress = (e) => {
@@ -21,10 +23,15 @@ const SearchBarBS = (props) => {
     }
   };
 
+  const reset = (e) => {
+    return e === " ";
+  };
+
   return (
     <div style={{ width: "35%", margin: "0 auto" }}>
       <Form className="d-flex">
         <FormControl
+          value={searchWord}
           onChange={(e) => {
             setSearchWord(e.target.value);
           }}
