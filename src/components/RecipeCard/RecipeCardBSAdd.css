@@ -32,3 +32,6 @@
   background-color: #638938;
   border-color: #638938;
 }
+.addbutton:disabled {
+  background-color: gray;
+}

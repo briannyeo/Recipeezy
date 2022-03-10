@@ -10,9 +10,13 @@ export default function RecipeCardBSAdd(props) {
   const [plannedRecipes, setPlannedRecipes] = useOutletContext();
 
   const handleAdd = (item) => {
+    console.log(item);
     setPlannedRecipes([...plannedRecipes, item]);
-    //console.log(plannedRecipes);
+    // if ([...plannedRecipes].includes(item.id)) {
+    //   addbutton.disabled = true;
+    // } else setPlannedRecipes([...plannedRecipes, item]);
   };
+
   const handleRemove = (item) => {
     console.log("item: ", item);
     const filteredRecipes = plannedRecipes.filter((e) => {

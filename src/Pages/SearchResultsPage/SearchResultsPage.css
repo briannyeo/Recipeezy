@@ -1,13 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=BioRhyme:wght@300&family=Bitter:wght@700;900&family=Raleway:wght@800&display=swap");
+
 .recipe-container {
   display: grid;
   grid-template-columns: 1fr, 1fr, 1fr;
 }
 
-.altbackground {
-  display: flex;
-  margin-top: 0 auto;
-}
-
 .cardrow {
   position: relative;
+}
+
+.searchheader {
+  margin: 1em auto;
+  font-family: "Bitter", sans-serif;
+  font-weight: 800;
+  font-size: 2em;
+}
+
+.altbackground {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }

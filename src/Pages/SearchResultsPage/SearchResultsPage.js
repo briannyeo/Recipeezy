@@ -52,6 +52,7 @@ const SearchResults = (props) => {
     <div>
       {/* <SearchBarBS /> */}
       <div className="altbackground">
+        <div className="searchheader">Results for: "{q}"</div>
         <div className="cardrow">
           <Row xs={1} md={3} xl={4} className="justify-content-md-center">
             {searchData ? (
