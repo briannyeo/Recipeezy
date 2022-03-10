@@ -5,10 +5,6 @@ import Recipeezy from "../../images/Recipeezy.png";
 const About = () => {
   return (
     <div className="container">
-      {/* <div className="about-header">
-        <img className="logo" src={Recipeezy}></img>
-      </div> */}
-
       <div className="about-details">
         <div className="about-context">
           {" "}
@@ -18,15 +14,10 @@ const About = () => {
           today? "
         </div>
 
-        <div
-          className="about-instructions"
-          style={{ fontFamily: "Bitter, serif" }}
-        >
-          How Recipeezy works:
+        <div className="about-instructions">
+          <b>How Recipeezy works:</b>
           <ol>
-            <li>
-              Type an ingredient into the "Search" bar (such as "Chicken")
-            </li>
+            <li>Type an ingredient into the searchbar (such as "Chicken")</li>
             <li>Add your favourite recipes to "Planned Meals"</li>
             <li>
               Refer to your "Grocery List" the next time you visit a grocery

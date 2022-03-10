@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=BioRhyme:wght@300&family=Bitter:wght@300&family=Raleway:wght@800&display=swap");
 
-* {
-  font-family: "Bitter", serif;
-}
 .container {
   background-color: white;
   position: absolute;
@@ -15,9 +12,17 @@
 }
 
 .about-details {
-  font-size: 30px;
-
+  font-size: 1.5em;
   margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-context {
+  margin: 2em;
+  text-align: center;
 }
 .about-instructions {
+  text-align: left;
+  margin: 0 auto;
 }
