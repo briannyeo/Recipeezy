@@ -9,23 +9,16 @@ export default function RecipeCardBSAdd(props) {
   //ADD RECIPE TO PLANNEDMEALS STATE
   const [plannedRecipes, setPlannedRecipes] = useOutletContext();
 
+  const storedRecipe = plannedRecipes.find((item) => item.url === props.url);
+  console.log(storedRecipe);
+  const buttonDisabled = storedRecipe ? true : false;
+
   const handleAdd = (item) => {
     console.log(item);
     setPlannedRecipes([...plannedRecipes, item]);
     // if ([...plannedRecipes].includes(item.id)) {
     //   addbutton.disabled = true;
     // } else setPlannedRecipes([...plannedRecipes, item]);
-  };
-
-  const handleRemove = (item) => {
-    console.log("item: ", item);
-    const filteredRecipes = plannedRecipes.filter((e) => {
-      //console.log("e", e);
-      return e.id !== item;
-    });
-
-    setPlannedRecipes(filteredRecipes);
-    //console.log(plannedRecipes);
   };
 
   const handleAddRecipe = () => {
@@ -69,7 +62,11 @@ export default function RecipeCardBSAdd(props) {
           <Card.Body>
             <Card.Title className="cardtitle">{props.title}</Card.Title>
 
-            <Button className="addbutton" onClick={handleAddRecipe}>
+            <Button
+              className="addbutton"
+              onClick={handleAddRecipe}
+              disabled={buttonDisabled}
+            >
               Add
             </Button>
           </Card.Body>
