@@ -17,7 +17,7 @@ export default function GroceryList() {
   // {butter: {tablespoon: 8}}}
   //ingredient = []
 
-  // console.log(plannedRecipes);
+  console.log(plannedRecipes);
 
   return (
     <>
@@ -25,6 +25,12 @@ export default function GroceryList() {
         <Table className="tablelist" striped bordered hover size="sm">
           <thead>
             <tr className="tableheader">
+              <th
+                style={{ fontFamily: "Raleway, sans-serif", color: "black" }}
+                scope="col"
+              >
+                Recipe
+              </th>
               <th
                 style={{ fontFamily: "Raleway, sans-serif", color: "black" }}
                 scope="col"
@@ -46,9 +52,11 @@ export default function GroceryList() {
             {plannedRecipes.map((el) =>
               el.ingredientLines.map((e, index) => (
                 <tr>
+                  <th>{el.title}</th>
                   <th key={index} scope="row">
                     {index + 1}
                   </th>
+
                   <td>{e}</td>
                   <td>
                     <input type="checkbox" />
