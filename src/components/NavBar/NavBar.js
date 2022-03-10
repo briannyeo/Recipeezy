@@ -1,14 +1,14 @@
-import { Navbar, Nav, Container, NavLink } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import chefHat from "../../images/chef.png";
+
 import Recipeezy from "../../images/logo2.png";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 import SearchBarBS from "../SearchBar/SearchBarBS";
 
 export default function NavBar() {
   return (
-    <Navbar className="navbar" sticky="top" fixed="top" bg="li" expand="md">
+    <Navbar className="navbar" fixed="top" bg="li" expand="md">
       <Container fluid>
         <Link to="/Recipeezy">
           <Navbar.Brand className="brand">

@@ -4,14 +4,12 @@ import { useOutletContext } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Dialog from "../DialogBox/Dialog";
 import "./RecipeCardBS.css";
-import { minHeight } from "@mui/system";
 
 export default function RecipeCardBSAdd(props) {
   //ADD RECIPE TO PLANNEDMEALS STATE
   const [plannedRecipes, setPlannedRecipes] = useOutletContext();
 
   const storedRecipe = plannedRecipes.find((item) => item.url === props.url);
-  console.log(storedRecipe);
   const buttonDisabled = storedRecipe ? true : false;
 
   const handleAdd = (item) => {
@@ -49,7 +47,7 @@ export default function RecipeCardBSAdd(props) {
         <Card
           className="recipecard"
           border="light"
-          style={{ width: "18rem", margin: "20px", minHeight: "23rem" }}
+          style={{ width: "18rem", margin: "10px auto ", minHeight: "23rem" }}
         >
           <Card.Img
             className="cardimage"

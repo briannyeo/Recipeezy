@@ -8,7 +8,7 @@ import GroceryList from "./GroceryListPage/GroceryList";
 import SearchResults from "./SearchResultsPage/SearchResultsPage";
 import RecipeDetails from "./RecipeDetailsPage/RecipeDetails";
 import NoMatch from "./NoMatchPage";
-import SearchBarBS from "../components/SearchBar/SearchBarBS";
+
 import background from "../images/recipeezyhomepage.jpeg";
 import { BackgroundStylesContext } from "../contexts/BackgroundStylesContext";
 

@@ -4,8 +4,12 @@
   background-color: #eef9d9;
   width: 45%;
   color: #82857a;
-  margin-top: 5px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   border: 2px solid #906bba;
+  height: 300px;
 }
 
 table {

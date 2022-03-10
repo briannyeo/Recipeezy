@@ -54,7 +54,13 @@ const SearchResults = (props) => {
       <div className="altbackground" style={{ maxWidth: "2000px" }}>
         <div className="searchheader">Results for: "{q}"</div>
         <div className="cardrow">
-          <Row xs={1} md={3} xl={4} className="justify-content-md-center">
+          <Row
+            xs={1}
+            sm={2}
+            md={3}
+            xl={4}
+            className="justify-content-md-center"
+          >
             {searchData ? (
               <>
                 {searchData.map((recipe, index) => (

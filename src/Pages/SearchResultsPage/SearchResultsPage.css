@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=BioRhyme:wght@300&family=Bitter:wght@700;900&family=Raleway:wght@800&display=swap");
 
+.justify-content-md-center {
+  margin: 0 auto;
+}
+
 .recipe-container {
   display: grid;
   grid-template-columns: 1fr, 1fr, 1fr;
