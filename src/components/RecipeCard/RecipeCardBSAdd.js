@@ -3,7 +3,8 @@ import React from "react";
 import { useOutletContext } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Dialog from "../DialogBox/Dialog";
-import "./RecipeCardBSAdd.css";
+import "./RecipeCardBS.css";
+import { minHeight } from "@mui/system";
 
 export default function RecipeCardBSAdd(props) {
   //ADD RECIPE TO PLANNEDMEALS STATE
@@ -16,9 +17,6 @@ export default function RecipeCardBSAdd(props) {
   const handleAdd = (item) => {
     console.log(item);
     setPlannedRecipes([...plannedRecipes, item]);
-    // if ([...plannedRecipes].includes(item.id)) {
-    //   addbutton.disabled = true;
-    // } else setPlannedRecipes([...plannedRecipes, item]);
   };
 
   const handleAddRecipe = () => {
@@ -51,7 +49,7 @@ export default function RecipeCardBSAdd(props) {
         <Card
           className="recipecard"
           border="light"
-          style={{ width: "18rem", margin: "20px" }}
+          style={{ width: "18rem", margin: "20px", minHeight: "23rem" }}
         >
           <Card.Img
             className="cardimage"
@@ -59,7 +57,7 @@ export default function RecipeCardBSAdd(props) {
             variant="top"
             src={props.url}
           />
-          <Card.Body>
+          <Card.Body style={{ display: "flex", flexDirection: "column" }}>
             <Card.Title className="cardtitle">{props.title}</Card.Title>
 
             <Button

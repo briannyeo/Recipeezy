@@ -15,7 +15,9 @@ const About = () => {
         </div>
 
         <div className="about-instructions">
-          <b>How Recipeezy works:</b>
+          <b>
+            <u>How Recipeezy works:</u>
+          </b>
           <ol>
             <li>Type an ingredient into the searchbar (such as "Chicken")</li>
             <li>Add your favourite recipes to "Planned Meals"</li>

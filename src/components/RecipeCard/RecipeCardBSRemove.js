@@ -3,8 +3,9 @@ import React from "react";
 import { useOutletContext } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Dialog from "../DialogBox/Dialog";
-import "./RecipeCardBSRemove.css";
+
 import { hover } from "@testing-library/user-event/dist/hover";
+import "./RecipeCardBS.css";
 
 export default function RecipeCardBSREMOVED(props) {
   const [plannedRecipes, setPlannedRecipes] = useOutletContext();
@@ -29,14 +30,18 @@ export default function RecipeCardBSREMOVED(props) {
   return (
     <>
       {props.title ? (
-        <Card className="recipecard" border="light" style={{ width: "18rem" }}>
+        <Card
+          className="recipecard"
+          border="light"
+          style={{ width: "18rem", margin: "20px", minHeight: "23rem" }}
+        >
           <Card.Img
             className="cardimage"
             onClick={() => setModalShow(true)}
             variant="top"
             src={props.url}
           />
-          <Card.Body>
+          <Card.Body style={{ display: "flex", flexDirection: "column" }}>
             <Card.Title className="cardtitle">{props.title}</Card.Title>
 
             <Button className="removebutton" onClick={handleRemoveRecipe}>

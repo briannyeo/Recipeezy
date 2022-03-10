@@ -23,10 +23,10 @@
 
 .addbutton {
   align-items: center;
-  margin: 0 auto;
   font-family: "Bitter", serif;
   background-color: #75a242;
   border-color: #75a242;
+  margin-top: 25px;
 }
 .addbutton:hover {
   background-color: #638938;
@@ -35,4 +35,17 @@
 .addbutton:disabled {
   background-color: gray;
   border-color: gray;
+}
+
+.removebutton {
+  align-items: center;
+  background-color: #906bba;
+  border-color: #906bba;
+  font-family: "Bitter", serif;
+  margin-top: 25px;
+}
+
+.removebutton:hover {
+  background-color: #c91b30;
+  border-color: #c91b30;
 }

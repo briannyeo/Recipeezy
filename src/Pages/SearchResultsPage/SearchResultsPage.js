@@ -51,7 +51,7 @@ const SearchResults = (props) => {
   return (
     <div>
       {/* <SearchBarBS /> */}
-      <div className="altbackground">
+      <div className="altbackground" style={{ maxWidth: "2000px" }}>
         <div className="searchheader">Results for: "{q}"</div>
         <div className="cardrow">
           <Row xs={1} md={3} xl={4} className="justify-content-md-center">
