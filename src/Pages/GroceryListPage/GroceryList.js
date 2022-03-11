@@ -46,27 +46,35 @@ export default function GroceryList() {
   console.log(ingredientsArray);
 
   return (
-    <div className="grocerycontainer">
-      {titleArray.map((e, index) => {
-        const ingredients = ingredientsArray[index].map((el) => {
-          return (
-            <ul>
-              <li>
-                {el} <input type="checkbox"></input>
-              </li>
-            </ul>
-          );
-        });
+    <>
+      {ingredientsArray.length > 1 ? (
+        <>
+          <div className="grocerycontainer">
+            {titleArray.map((e, index) => {
+              const ingredients = ingredientsArray[index].map((el) => {
+                return (
+                  <ul>
+                    <li>
+                      {el} <input type="checkbox"></input>
+                    </li>
+                  </ul>
+                );
+              });
 
-        return (
-          <div className="recipecontainer">
-            <div className="titlecolumn">{e}</div>
+              return (
+                <div className="recipecontainer">
+                  <div className="titlecolumn">{e}</div>
 
-            <div className="ingredientcolumn">{ingredients}</div>
+                  <div className="ingredientcolumn">{ingredients}</div>
+                </div>
+              );
+            })}
           </div>
-        );
-      })}
-    </div>
+        </>
+      ) : (
+        <div></div>
+      )}
+    </>
   );
 }
 
