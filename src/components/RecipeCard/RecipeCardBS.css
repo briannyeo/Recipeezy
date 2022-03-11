@@ -27,7 +27,7 @@
   font-family: "Bitter", serif;
   background-color: #75a242;
   border-color: #75a242;
-  margin-top: 25px;
+  margin: 15px;
 }
 .addbutton:hover {
   background-color: #638938;
@@ -43,7 +43,7 @@
   background-color: #906bba;
   border-color: #906bba;
   font-family: "Bitter", serif;
-  margin-top: 25px;
+  margin: 15px;
 }
 
 .removebutton:hover {
