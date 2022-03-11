@@ -19,59 +19,113 @@ export default function GroceryList() {
 
   console.log(plannedRecipes);
 
-  return (
-    <div className="tablecontainer">
-      {plannedRecipes.length !== 0 ? (
-        <Table className="tablelist" striped bordered hover size="sm">
-          <thead>
-            <tr className="tableheader">
-              <th
-                style={{ fontFamily: "Raleway, sans-serif", color: "black" }}
-                scope="col"
-              >
-                Recipe
-              </th>
-              <th
-                style={{ fontFamily: "Raleway, sans-serif", color: "black" }}
-                scope="col"
-              >
-                #
-              </th>
-              <th
-                style={{
-                  fontFamily: "Raleway, sans-serif",
-                  color: "black",
-                }}
-                scope="col"
-              >
-                INGREDIENTS
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {plannedRecipes.map((el) =>
-              el.ingredientLines.map((e, index) => (
-                <tr>
-                  <th>{el.title}</th>
-                  <th key={index} scope="row">
-                    {index + 1}
-                  </th>
+  // <div className="container">
+  //   <div className="titlecolumn">
+  //     {titleArray.map((e) => (
+  //       <div className="titlecontainer">{e}</div>
+  //     ))}
+  //   </div>
 
-                  <td>{e}</td>
-                  <td>
-                    <input type="checkbox" />
-                  </td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </Table>
-      ) : (
-        <div></div>
-      )}
+  //   <div className="ingredientcolumn">
+  //     {plannedRecipes.map((e) => (
+  //       <div className="ingredientcontainer">
+  //         {e.ingredientLines.map((el) => (
+  //           <div>{el}</div>
+  //         ))}
+  //       </div>
+  //     ))}
+  //   </div>
+  // </div>;
+  const titleArray = plannedRecipes.map((e) => e.title);
+  console.log("recipetitles: " + titleArray);
+
+  const ingredientsArray = [];
+
+  plannedRecipes.map((e) => ingredientsArray.push(e.ingredientLines));
+
+  console.log(ingredientsArray);
+
+  return (
+    <div className="grocerycontainer">
+      {titleArray.map((e, index) => {
+        const ingredients = ingredientsArray[index].map((el) => {
+          return (
+            <ul>
+              <li>
+                {el} <input type="checkbox"></input>
+              </li>
+            </ul>
+          );
+        });
+
+        return (
+          <div className="recipecontainer">
+            <div className="titlecolumn">{e}</div>
+
+            <div className="ingredientcolumn">{ingredients}</div>
+          </div>
+        );
+      })}
     </div>
   );
 }
+
+////////////////////////////////////////////
+
+{
+  /* <div className="tablecontainer">
+{plannedRecipes.length !== 0 ? (
+  <Table className="tablelist" striped bordered hover size="sm">
+    <thead className="tablehead">
+      <tr className="tableheader">
+        <th
+          style={{ fontFamily: "Raleway, sans-serif", color: "black" }}
+          scope="col"
+        >
+          Recipe
+        </th>
+        <th
+          style={{ fontFamily: "Raleway, sans-serif", color: "black" }}
+          scope="col"
+        >
+          #
+        </th>
+        <th
+          style={{
+            fontFamily: "Raleway, sans-serif",
+            color: "black",
+          }}
+          scope="col"
+        >
+          INGREDIENTS
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {plannedRecipes.map((el) =>
+        el.ingredientLines.map((e, index) => (
+          <tr>
+            <th>{el.title}</th>
+            <th key={index} scope="row">
+              {index + 1}
+            </th>
+
+            <td>{e}</td>
+            <td>
+              <input type="checkbox" />
+            </td>
+          </tr>
+        ))
+      )}
+    </tbody>
+  </Table>
+) : (
+  <div></div>
+)}
+</div> */
+}
+
+////////////////////////
 
 // const covertSetsToData = (sets) => {
 //   const transformed = {
