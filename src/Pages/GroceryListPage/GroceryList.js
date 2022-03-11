@@ -20,7 +20,7 @@ export default function GroceryList() {
   console.log(plannedRecipes);
 
   return (
-    <div>
+    <div className="tablecontainer">
       {plannedRecipes.length !== 0 ? (
         <Table className="tablelist" striped bordered hover size="sm">
           <thead>
